@@ -41,42 +41,5 @@ This app has two types of users: Visitors and logged-in users
 * I want to be able to search for books to add to my collection
 * So that I could add books to my collection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Wireframe
+Landing/Sign Up
