@@ -44,7 +44,7 @@ This app has two types of users: Visitors and logged-in users
 ## Wireframes
 Landing/Sign Up | Member Log In
 :-------------------------:|:-------------------------:
-![Landing/Sign Up](github-images/wireframes/landing-page.jpg)  |  ![Member Log In](/github-images/wireframes/signup.jpg)
+![Landing/Sign Up](github-images/wireframes/landing-page.jpg)  |  ![Member Log In](github-images/wireframes/member-login.jpg)
 Dashboard | Dashboard Booklist
 ![Dashboard](github-images/wireframes/dashboard.jpg) | ![Dashboard/Booklist](github-images/wireframes/dashboard-booklist.jpg)
 Create collection | Book Info
