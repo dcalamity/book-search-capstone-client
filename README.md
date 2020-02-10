@@ -42,9 +42,16 @@ This app has two types of users: Visitors and logged-in users
 * So that I could add books to my collection
 
 ## Wireframes
-Landing/Login Page |
+Landing/Sign Up | Member Log In
 :-------------------------:|:-------------------------:
-![Landing/Login Page](github-images/wireframes/landing-page.jpg)  |  ![LoginPage](github-images/wireframes/member-login.jpg)
+![Landing/Sign Up](github-images/wireframes/landing-page.jpg)  |  ![Member Log In](/github-images/wireframes/signup.jpg)
+Dashboard | Dashboard Booklist
+![Dashboard](github-images/wireframes/dashboard.jpg) | ![Dashboard/Booklist](github-images/wireframes/dashboard-booklist.jpg)
+Create collection | Book Info
+![Create Collection](github-images/wireframes/create-collection.jpg) | ![Book Info](github-images/wireframes/book-info.jpg)
+Add book
+![Add Book](github-images/wireframes/add-book.jpg)
+
 
 ## Business Objects (database structure)
 ### User
