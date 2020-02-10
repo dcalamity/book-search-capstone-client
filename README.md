@@ -46,17 +46,17 @@ Landing/Sign Up
 
 
 ## Business Objects (database structure)
-* User
+### User
   * User Id
   * Username (Email Address)
   * Password (8 char, at least 1 Alpha, 1 Num, 1 Cap )
 
-* Book Collection
+### Book Collection
   * Collection ID
   * User Id
   * Collection Name(Genre, Location)(String Varchar 255  )
 
-* Book
+### Book
   * Book ID
   * Collection ID
   * Finished (Boolean)
@@ -68,7 +68,7 @@ Landing/Sign Up
   * Description (Text)
   * Bookamrk Page (Integer)
 
-* Comments
+### Comments
   * Comments ID
   * Book ID 
   * Book Comment (Text)
