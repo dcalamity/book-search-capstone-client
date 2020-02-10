@@ -44,3 +44,32 @@ This app has two types of users: Visitors and logged-in users
 ### Wireframe
 Landing/Sign Up
 
+
+## Business Objects (database structure)
+* User
+  * User Id
+  * Username (Email Address)
+  * Password (8 char, at least 1 Alpha, 1 Num, 1 Cap )
+
+* Book Collection
+  * Collection ID
+  * User Id
+  * Collection Name(Genre, Location)(String Varchar 255  )
+
+* Book
+  * Book ID
+  * Collection ID
+  * Finished (Boolean)
+  * Title (String Varchar 255)
+  * Author (String Varchar 255)
+  * Genre (String Varchar 255)
+  * ISBN ID (String Varchar 255)
+  * Year Published (Integer)
+  * Description (Text)
+  * Bookamrk Page (Integer)
+
+* Comments
+  * Comments ID
+  * Book ID 
+  * Book Comment (Text)
+  * Book Rating (Integer 1-5)
