@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import LogIn from './LogIn';
+import Dashboard from './Dashboard';
 import './App.css';
 
 function App() {
