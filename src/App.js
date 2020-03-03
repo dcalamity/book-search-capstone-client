@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import LogIn from './LogIn';
 import Dashboard from './Dashboard';
+import Booklist from './Booklist';
+import Createcollection from './Createcollection';
+import Bookinfo from './Bookinfo';
+import Addbook from './Addbook';
 import './App.css';
 
 function App() {
@@ -21,6 +25,11 @@ function App() {
           Learn React
         </a>
         <LogIn />
+        <Dashboard />
+        <Booklist />
+        <Createcollection />
+        <Bookinfo />
+        <Addbook />
       </header>
     </div>
   );
