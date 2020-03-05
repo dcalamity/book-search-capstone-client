@@ -4,7 +4,54 @@ import React from 'react';
 function Bookinfo() {
   return (
     <div className="App">
-      Bookinfo Component
+      <section>
+      <h1>Book Info</h1>
+      <header class="d-header">
+        <div class="top-left">This is where the logo will be</div>
+        <div class="top-right">
+          <a href="dashboard.html">Home</a>
+          <a href="index.html">Log Out</a>
+        </div>
+      </header>
+
+      <main class="b-square">
+
+        <div class="book-cover">
+          <h2>Book Title</h2>
+        </div>
+        
+        <div class="mero-mole">
+          <div role="book info">
+            <h3>Title</h3>
+            <h3>Author</h3>
+            <p>Comments</p>
+          </div>
+
+           <div>
+            <label for="list">Choose a collection:</label>
+            <select id="Collections" label="collection names">
+              <option value="Scary Books">Scary Books</option>
+              <option value="Funny Books">Funny Books</option>
+            </select> 
+          </div>  
+        </div>
+
+      </main>
+
+      <section role="footer">
+        <div class="footer">
+
+          <div class="top-left">
+            © 2020 Eduardo Gonzalez              
+          </div>
+
+          <div class="top-right">        
+          </div>
+
+        </div>
+      </section>
+
+    </section>
     </div>
   );
 }

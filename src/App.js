@@ -6,32 +6,57 @@ import Booklist from './Booklist';
 import Createcollection from './Createcollection';
 import Bookinfo from './Bookinfo';
 import Addbook from './Addbook';
-import './App.css';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <LogIn />
-        <Dashboard />
-        <Booklist />
-        <Createcollection />
-        <Bookinfo />
-        <Addbook />
-      </header>
-    </div>
+      <body className="main">
+        <main class="landing">
+        <header class="header">
+          <div class="top-left">This is where the logo will be</div>
+          <div class="top-right">
+            <a href="login.html">Log In</a>
+          </div>
+        </header>  
+        <div role="sign up rectangle" class="middle">
+          <div class="info">
+            <h2>Description</h2>
+          </div>
+          <div class="sign-up">
+            <h2>Sign Up</h2>
+            <section class="input-user">
+              <label>Username</label>
+              <input type="text" name='Username' placeholder="Username"/>
+            </section>
+            <section class="input-pwd">
+              <label>Password</label>
+              <input type="Password" name='Password' placeholder="Password"/>
+              <button class="s-button"><a href="dashboard.html">Sign Up</a></button>
+              <div>
+                <a href="login.html">Already have an account? Log in here!</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main> 
+      <section role="footer">
+        <div class="footer">
+          <div class="top-left">
+            © 2020 Eduardo Gonzalez
+          </div>
+          <div class="top-right">
+          </div>
+        </div>
+      </section> 
+      <script src="script.js"></script>
+      <LogIn/>
+      <Dashboard/>
+      <Booklist />
+      <Createcollection/>
+      <Bookinfo/>
+      <Addbook/>
+    </body>
+    
   );
 }
 
