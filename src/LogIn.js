@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+class LogIn extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { };
+  }
+
+  componentDidMount() {
+      console.log('Stateful component successfully mounted.');
+  }
 
 
-function LogIn() {
-  return (
-      <div className="App">
+  render() {
+      // const { name } = this.props;
+      // const { isLiked } = this.state;
+
+      return (
+        <div className="App">
         <body>
-          <section role="header">
+          <section>
             <div class="header">
               <div class="top-left">
                 Logo
@@ -32,19 +45,10 @@ function LogIn() {
               </section>
               </div>
           </section>
-          <section role="footer">
-            <div class="footer">
-              <div class="top-left">
-                © 2020 Eduardo Gonzalez
-              </div>
-              <div class="top-right">
-                
-              </div>
-            </div>
-          </section>
         </body>
       </div>
-  );
+      );
+  }
 }
 
 export default LogIn;

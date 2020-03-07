@@ -128,16 +128,6 @@ function Booklist() {
           </a>
         </div>
       </main>
-      <section role="footer">
-      <div class="footer">
-        <div class="top-left">
-          © 2020 Eduardo Gonzalez
-        </div>
-        <div class="top-right">
-          
-        </div>
-      </div>
-    </section> 
     </section>
     </div>
   );

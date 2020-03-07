@@ -21,7 +21,7 @@ function Bookinfo() {
         </div>
         
         <div class="mero-mole">
-          <div role="book info">
+          <div>
             <h3>Title</h3>
             <h3>Author</h3>
             <p>Comments</p>
@@ -37,20 +37,6 @@ function Bookinfo() {
         </div>
 
       </main>
-
-      <section role="footer">
-        <div class="footer">
-
-          <div class="top-left">
-            © 2020 Eduardo Gonzalez              
-          </div>
-
-          <div class="top-right">        
-          </div>
-
-        </div>
-      </section>
-
     </section>
     </div>
   );
