@@ -4,11 +4,11 @@ import React from 'react';
 function Footer() {
   return (
     <section>
-      <div class="footer">
-        <div class="top-left">
+      <div className="footer">
+        <div className="top-left">
           © 2020 Eduardo Gonzalez
         </div>
-        <div class="top-right">
+        <div className="top-right">
         </div>
       </div>
   </section>

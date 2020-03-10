@@ -28,7 +28,7 @@ function Bookinfo() {
           </div>
 
            <div>
-            <label for="list">Choose a collection:</label>
+            <label>Choose a collection:</label>
             <select id="Collections" label="collection names">
               <option value="Scary Books">Scary Books</option>
               <option value="Funny Books">Funny Books</option>

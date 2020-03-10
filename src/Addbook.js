@@ -18,18 +18,18 @@ class Addbook extends Component {
         <div className="App">
         <section>
         <h1>Dashboard</h1>
-        <header class="b-middle">
-          <div class="top-left">This is where the logo will be</div>
-          <div class="top-right">
+        <header className="b-middle">
+          <div className="top-left">This is where the logo will be</div>
+          <div className="top-right">
             <a href="dashboard.html">Home</a>
             <a href="index.html">Log Out</a>
           </div>
         </header>
-        <main class="d-middle">
-          <div class="c-list">
-            <div class="l-book">
+        <main className="d-middle">
+          <div className="c-list">
+            <div className="l-book">
               <h2>Collection</h2>
-              <div class="list-flex">
+              <div className="list-flex">
                 <h3>
                   <a href="dashboardBooklist.html">
                       Scary Book list
@@ -39,7 +39,7 @@ class Addbook extends Component {
                   <a href="addbooktolist.html">Add a book</a>
                 </div>
               </div>
-              <div class="list-flex">
+              <div className="list-flex">
                 <h3>
                   <a href="dashboardBooklist.html">
                     Funny Books
@@ -55,16 +55,14 @@ class Addbook extends Component {
                 </a></button>
             </div>
           </div>
-          <div class="book-list">
-            <div class="b-place">
-              <div class="h-center">
+          <div className="book-list">
+            <div className="b-place">
+              <div className="h-center">
               <label>Book Title</label>
-              <input type="text" name='Title' placeholder="Book Title"/>
-              <submit>
-                <button type="submit" placeholder="search">
-                  <a href="dashboardBooklist.html">Search</a>
-                </button>
-              </submit>
+              <input type="Submit" name='Title' placeholder="Book Title"/>
+              <button type="submit" placeholder="search">
+                <a href="dashboardBooklist.html">Search</a>
+              </button>
               </div>
             </div>
           </div>

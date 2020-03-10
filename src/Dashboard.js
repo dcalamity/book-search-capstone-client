@@ -7,29 +7,27 @@ function Dashboard() {
     <div className="App">
         <section>
         <h1>Dashboard</h1>
-        <header class="d-header">
-          <div class="top-left">This is where the logo will be</div>
-          <div class="h-center">
+        <header className="d-header">
+          <div className="top-left">This is where the logo will be</div>
+          <div className="h-center">
               <label>Book Title</label>
               <input type="text" name='Title' placeholder="Book Title"/>
-              <submit>
-                <button type="submit" placeholder="search">
-                  <a href="dashboardBooklist.html">Search</a>
-                </button>
-              </submit>
+              <button type="submit" placeholder="search">
+                <a href="dashboardBooklist.html">Search</a>
+              </button>
           </div>
-          <div class="top-right">
+          <div className="top-right">
             <a href="dashboard.html">Home</a>
             <a href="index.html">Log Out</a>
           </div>
         </header>
 
-        <main class="d-middle">
+        <main className="d-middle">
 
-          <div class="c-list">
-            <div class="l-book">
+          <div className="c-list">
+            <div className="l-book">
               <h2>Collection</h2>
-              <div class="list-flex">
+              <div className="list-flex">
                 <h3>
                   <a href="dashboardBooklist.html">
                       Scary Book list
@@ -40,7 +38,7 @@ function Dashboard() {
                 </div>
               </div>
 
-              <div class="list-flex">
+              <div className="list-flex">
                 <h3>
                   <a href="dashboardBooklist.html">
                     Funny Books
@@ -60,8 +58,8 @@ function Dashboard() {
           </div>
           
 
-          <div class="book-list">
-            <div class="b-place">
+          <div className="book-list">
+            <div className="b-place">
               <h2>Click on a collection to see your books!</h2>
             </div>
           </div>

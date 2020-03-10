@@ -11,11 +11,9 @@ function Booklist() {
         <div className="h-center">
           <label>Book Title</label>
           <input type="text" name='Title' placeholder="Book Title"/>
-          <submit>
             <button type="submit" placeholder="search">
               <a href="index.html">Search</a>
             </button>
-          </submit>
         </div>
         <div className="top-right">
           <a href="dashboard.html">Home</a>

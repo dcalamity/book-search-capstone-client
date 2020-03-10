@@ -78,31 +78,30 @@ class LogIn extends Component {
 
       return (
         <div className="App">
-        <body>
           <section>
-            <div class="header">
-              <div class="top-left">
+            <div className="header">
+              <div className="top-left">
                 Logo
               </div>
-              <div class="top-right">
+              <div className="top-right">
                 <a href="index.html">Sign up</a>
               </div>
             </div>
           </section>
           <section>
-            <div class="log-in">
+            <div className="log-in">
               <h2>Log in</h2>
               
-              <form onSubmit={this.handleSubmit} class="input-pwd">
+              <form onSubmit={this.handleSubmit} className="input-pwd">
 
-                <section class="input-user">
+                <section className="input-user">
                   <label>Username</label>
 
                   <input type="text" name='Username' placeholder="Username" onChange={e => this.changePassword(e.target.value)}/>
               
                   <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
 
-                    <button class="s-button" type="submit"><a href="dashboard.html">Sign In</a>
+                    <button className="s-button" type="submit"><a href="dashboard.html">Sign In</a>
                     </button>
 
                     <div>
@@ -113,7 +112,6 @@ class LogIn extends Component {
               </form>
               </div>
           </section>
-        </body>
       </div>
       );
   }
