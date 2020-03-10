@@ -1,4 +1,5 @@
 import React from 'react';
+import Booklist from './Booklist';
 
 
 function Dashboard() {
@@ -66,6 +67,7 @@ function Dashboard() {
           </div>
         </main>
       </section>
+      <Booklist />
     </div>
   );
 }

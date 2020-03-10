@@ -10,7 +10,6 @@ class Addbook extends Component {
       console.log('Stateful component successfully mounted.');
   }
 
-
   render() {
       // const { name } = this.props;
       // const { isLiked } = this.state;

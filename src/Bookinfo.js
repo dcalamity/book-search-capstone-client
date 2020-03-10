@@ -6,21 +6,21 @@ function Bookinfo() {
     <div className="App">
       <section>
       <h1>Book Info</h1>
-      <header class="d-header">
-        <div class="top-left">This is where the logo will be</div>
-        <div class="top-right">
+      <header className="d-header">
+        <div className="top-left">This is where the logo will be</div>
+        <div className="top-right">
           <a href="dashboard.html">Home</a>
           <a href="index.html">Log Out</a>
         </div>
       </header>
 
-      <main class="b-square">
+      <main className="b-square">
 
-        <div class="book-cover">
+        <div className="book-cover">
           <h2>Book Title</h2>
         </div>
         
-        <div class="mero-mole">
+        <div className="mero-mole">
           <div>
             <h3>Title</h3>
             <h3>Author</h3>

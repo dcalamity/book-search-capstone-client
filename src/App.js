@@ -3,7 +3,6 @@ import Signup from './Signup';
 import Footer from './Footer'
 import LogIn from './LogIn';
 import Dashboard from './Dashboard';
-import Booklist from './Booklist';
 import Createcollection from './Createcollection';
 import Bookinfo from './Bookinfo';
 import Addbook from './Addbook';
@@ -31,7 +30,6 @@ class App extends Component {
            {/* Stateful */}
           <LogIn/>
           <Dashboard/>
-          <Booklist />
            {/* Stateful */}
           <Createcollection/>
            {/* Stateful */}
