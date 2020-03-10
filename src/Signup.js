@@ -12,7 +12,7 @@ class Signup extends Component {
   }
 
   componentDidMount() {
-      console.log('Stateful component successfully mounted.');
+      console.log('Stateful component Sign Up successfully mounted.');
   }
 
   changeUsername(Username) {
