@@ -71,7 +71,7 @@ class Signup extends Component {
         <header className="header">
           <div className="top-left">This is where the logo will be</div>
           <div className="top-right">
-            <a href="login.html">Log In</a>
+            <a href="/LogIn">Log In</a>
           </div>
         </header>  
         <div className="middle">
