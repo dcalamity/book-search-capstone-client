@@ -6,7 +6,10 @@ import Dashboard from './Dashboard';
 import Createcollection from './Createcollection';
 import Bookinfo from './Bookinfo';
 import Addbook from './Addbook';
+import NotFound from './NotFound';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
+import Booklist from './Booklist';
 
 
 class App extends Component {
@@ -16,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-      console.log('Stateful component successfully mounted.');
+      console.log('Stateful component Appjs successfully mounted.');
   }
 
   render() {
@@ -26,17 +29,27 @@ class App extends Component {
       return (
         <div>
           {/* Stateful */}
-          <Signup/>
-           {/* Stateful */}
-          <LogIn/>
-          <Dashboard/>
-           {/* Stateful */}
-          <Createcollection/>
-           {/* Stateful */}
-          <Bookinfo/>
-           {/* Stateful */}
-          <Addbook/>
-          <Footer/>
+          <Switch>
+               < Route exact path='/' component={Signup}  />
+              {/* Stateful */}
+              < Route path='/LogIn' component={LogIn}  />
+              
+              < Route path='/Dash' component={ Dashboard}  />
+
+              < Route path='/List' component={ Booklist}  />
+              
+              < Route path='/Create' component={Createcollection}  />
+              {/* Stateful */}
+              < Route path='/Info' component={Bookinfo}  />
+              {/* Stateful */}
+              < Route path='/Add' component={Addbook}  />
+
+              <Route component={NotFound} />
+              {/* Stateful */}
+              
+              <Footer />
+          </Switch>
+            
         </div>
       );
   }

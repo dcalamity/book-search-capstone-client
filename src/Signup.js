@@ -89,7 +89,7 @@ class Signup extends Component {
               <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
               <button className="s-button" type="submit">Sign Up</button>
               <div>
-                <a href="login.html">Already have an account? Log in here!</a>
+                <a href="/LogIn">Already have an account? Log in here!</a>
               </div>
             </section>
           </form>

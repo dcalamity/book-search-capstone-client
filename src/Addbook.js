@@ -7,7 +7,7 @@ class Addbook extends Component {
   }
 
   componentDidMount() {
-      console.log('Stateful component successfully mounted.');
+      console.log('Stateful component Add Book successfully mounted.');
   }
 
   render() {
@@ -59,9 +59,9 @@ class Addbook extends Component {
             <div className="b-place">
               <div className="h-center">
               <label>Book Title</label>
-              <input type="Submit" name='Title' placeholder="Book Title"/>
+              <input type="Text" name='Title' placeholder="Book Title"/>
               <button type="submit" placeholder="search">
-                <a href="dashboardBooklist.html">Search</a>
+                search
               </button>
               </div>
             </div>

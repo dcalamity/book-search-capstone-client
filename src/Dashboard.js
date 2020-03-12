@@ -65,7 +65,6 @@ function Dashboard() {
           </div>
         </main>
       </section>
-      <Booklist />
     </div>
   );
 }

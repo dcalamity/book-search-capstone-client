@@ -8,7 +8,7 @@ class Createcollection extends Component {
   }
 
   componentDidMount() {
-      console.log('Stateful component successfully mounted.');
+      console.log('Stateful component Create Collection successfully mounted.');
   }
 
 
