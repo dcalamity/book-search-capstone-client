@@ -3,11 +3,30 @@ import React, { Component } from 'react';
 class Addbook extends Component {
   constructor(props) {
       super(props);
-      this.state = { isLiked: false };
+      this.state = { 
+        search: '',
+        books:[]
+      };
   }
 
   componentDidMount() {
       console.log('Stateful component Add Book successfully mounted.');
+  }
+
+  changeSearch(search) {
+    this.setState({
+      search
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}&key=AIzaSyAOOYu0LFVQ45qOFjMl11H8Mdr2NYDxLqU`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
   }
 
   render() {
@@ -59,10 +78,14 @@ class Addbook extends Component {
             <div className="b-place">
               <div className="h-center">
               <label>Book Title</label>
-              <input type="Text" name='Title' placeholder="Book Title"/>
-              <button type="submit" placeholder="search">
-                search
-              </button>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)}/>
+                <button type="submit">
+                  search
+                </button>
+              </form>
+              
+              
               </div>
             </div>
           </div>

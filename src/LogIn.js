@@ -84,7 +84,7 @@ class LogIn extends Component {
                 Logo
               </div>
               <div className="top-right">
-                <a href="index.html">Sign up</a>
+                <a href="/">Sign up</a>
               </div>
             </div>
           </section>
@@ -101,7 +101,7 @@ class LogIn extends Component {
               
                   <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
 
-                    <button className="s-button" type="submit"><a href="dashboard.html">Sign In</a>
+                    <button className="s-button" type="submit"><a href="/dash">Sign In</a>
                     </button>
 
                     <div>

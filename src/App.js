@@ -29,6 +29,9 @@ class App extends Component {
       return (
         <div>
           {/* Stateful */}
+
+          {/* NAV LINK  */}
+          
           <Switch>
                < Route exact path='/' component={Signup}  />
               {/* Stateful */}

@@ -87,7 +87,7 @@ class Signup extends Component {
             <section className="input-pwd">
               <label>Password</label>
               <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
-              <button className="s-button" type="submit">Sign Up</button>
+              <button className="s-button" type="submit"><a href="/dash">Sign Up</a></button>
               <div>
                 <a href="/LogIn">Already have an account? Log in here!</a>
               </div>

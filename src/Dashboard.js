@@ -9,13 +9,13 @@ function Dashboard() {
         <h1>Dashboard</h1>
         <header className="d-header">
           <div className="top-left">This is where the logo will be</div>
-          <div className="h-center">
+          {/* <div className="h-center">
               <label>Book Title</label>
               <input type="text" name='Title' placeholder="Book Title"/>
               <button type="submit" placeholder="search">
                 <a href="dashboardBooklist.html">Search</a>
               </button>
-          </div>
+          </div> */}
           <div className="top-right">
             <a href="dashboard.html">Home</a>
             <a href="index.html">Log Out</a>
