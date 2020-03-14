@@ -15,7 +15,9 @@ import Booklist from './Booklist';
 class App extends Component {
   constructor(props) {
       super(props);
-      this.state = { };
+      this.state = { 
+
+      };
   }
 
   componentDidMount() {
@@ -33,19 +35,19 @@ class App extends Component {
           {/* NAV LINK  */}
           
           <Switch>
-               < Route exact path='/' component={Signup}  />
+               <Route exact path='/' component={Signup}  />
               {/* Stateful */}
-              < Route path='/LogIn' component={LogIn}  />
+              <Route path='/user/login' component={LogIn}  />
               
-              < Route path='/Dash' component={ Dashboard}  />
+              <Route path='/user/dash' component={Dashboard}  />
 
-              < Route path='/List' component={ Booklist}  />
+              <Route path='/booklist/show' component={Booklist}  />
               
-              < Route path='/Create' component={Createcollection}  />
+              <Route path='/booklist/create' component={Createcollection}  />
               {/* Stateful */}
-              < Route path='/Info' component={Bookinfo}  />
+              <Route path='/book/show' component={Bookinfo}  />
               {/* Stateful */}
-              < Route path='/Add' component={Addbook}  />
+              <Route path='/book/create' component={Addbook}  />
 
               <Route component={NotFound} />
               {/* Stateful */}

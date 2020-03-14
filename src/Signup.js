@@ -29,42 +29,30 @@ class Signup extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-
       console.log(this.state)
-
       fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}&key=AIzaSyAOOYu0LFVQ45qOFjMl11H8Mdr2NYDxLqU`)
-        .then(response => response.json())
+        .then(response => {
+          if (response.ok) {
+              return response.json();
+          }
+          throw new Error(response.statusText);
+        })
         .then(data => {
           console.log(data)
-         
-          let outputObject = [];
-          const bookDetail = data.items.map((value, key) => {
-            console.log(key, value)
-
-            outputObject[key] = {
-              'title': value.volumeInfo.title, 
-              'author': value.volumeInfo.authors, 
-              'priceCheck': (value.saleInfo.saleability === 'FOR_SALE'),
-            
-              'Description': (('undefined' === value.volumeInfo.description) ? 'no description' : value.volumeInfo.description.slice(0,500)),
-
-              'image': (value.volumeInfo.hasOwnProperty('imageLinks')) ? (value.volumeInfo.imageLinks.thumbnail) : ('https://icon-library.net/images/no-image-icon/no-image-icon-5.jpg')
-            }
-          })
-          
-          
+          //here we will have user sign up processing
           this.setState({
-            LogInUserID: [outputObject]
+            LogInUserID: 55
           });
-          // console.log(outputObject);
-          }
-        )      
+        })
+       .catch(err => {
+          console.log(err);
+        });   
    }
 
   render() {
       // const { name } = this.props;
-      // const { isLiked } = this.state;
+      const { LogInUserID } = this.state;
+      console.log(LogInUserID)
 
       return (
         <main className="landing">
@@ -87,7 +75,7 @@ class Signup extends Component {
             <section className="input-pwd">
               <label>Password</label>
               <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
-              <button className="s-button" type="submit"><a href="/dash">Sign Up</a></button>
+              <button className="s-button" type="submit">Sign Up</button>
               <div>
                 <a href="/LogIn">Already have an account? Log in here!</a>
               </div>
