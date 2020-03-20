@@ -1,7 +1,8 @@
 # book-search-capstone-client
 
 ## Working Prototype
-Coming soon
+* You can see a wroking prototype with React https://book-search-capstone-client.herokuapp.com/
+* You can see a working prototype with Node https://book-search-capstone-server.herokuapp.com/
 
 ## User Stories
 This app has two types of users: Visitors and logged-in users
