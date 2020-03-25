@@ -30,7 +30,7 @@ class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
       console.log(this.state)
-      fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}&key=AIzaSyAOOYu0LFVQ45qOFjMl11H8Mdr2NYDxLqU`)
+      fetch(``)
         .then(response => {
           if (response.ok) {
               return response.json();
