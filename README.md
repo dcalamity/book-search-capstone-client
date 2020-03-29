@@ -56,18 +56,18 @@ Add book
 
 ## Business Objects (database structure)
 ### User
-  * User Id
+  * User Id (Integer)
   * Username (Email Address)
   * Password (8 char, at least 1 Alpha, 1 Num, 1 Cap )
 
 ### Book Collection
-  * Collection ID
-  * User Id
+  * Collection ID (Integer)
+  * User Id (Integer)
   * Collection Name(Genre, Location)(String Varchar 255  )
 
 ### Book
-  * Book ID
-  * Collection ID
+  * Book ID (Integer)
+  * Collection ID (Integer)
   * Finished (Boolean)
   * Title (String Varchar 255)
   * Author (String Varchar 255)
@@ -78,7 +78,7 @@ Add book
   * Bookamrk Page (Integer)
 
 ### Comments
-  * Comments ID
-  * Book ID 
+  * Comments ID (Integer)
+  * Book ID (Integer)
   * Book Comment (Text)
   * Book Rating (Integer 1-5)
