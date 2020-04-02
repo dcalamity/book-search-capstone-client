@@ -27,13 +27,9 @@ class App extends Component {
   render() {
       // const { name } = this.props;
       // const { isLiked } = this.state;
-
       return (
         <div>
-          {/* Stateful */}
-
-          {/* NAV LINK  */}
-          
+    
           <Switch>
                <Route exact path='/' component={Signup}  />
               {/* Stateful */}
@@ -51,10 +47,8 @@ class App extends Component {
 
               <Route component={NotFound} />
               {/* Stateful */}
-              
-              <Footer />
           </Switch>
-            
+            <Footer />
         </div>
       );
   }

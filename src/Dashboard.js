@@ -1,5 +1,6 @@
 import React from 'react';
 import Booklist from './Booklist';
+import Footer from './Footer'
 
 
 function Dashboard() {
@@ -17,8 +18,11 @@ function Dashboard() {
               </button>
           </div> */}
           <div className="top-right">
-            <a href="dashboard.html">Home</a>
-            <a href="index.html">Log Out</a>
+            <ul className='link'>
+              <li><a href="dashboard.html">Home</a></li>
+              <li><a href="index.html">Log Out</a></li>
+            </ul>
+            
           </div>
         </header>
 
