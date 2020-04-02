@@ -9,7 +9,6 @@ class LogIn extends Component {
       },
       password: {
         value: ''
-      
       },
       LogInUserID: 0
      };
@@ -79,7 +78,7 @@ class LogIn extends Component {
               <form onSubmit={this.handleSubmit} className="input-pwd">
                 <div className="input-user">
                   <label>Username</label>
-                  <input type="text" name='Username' placeholder="Username" onChange={e => this.changePassword(e.target.value)}/>
+                  <input type="text" name='Username' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
                   <label>Password</label>
                   <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
                   <button className="s-button" type="submit">Sign In
