@@ -4,21 +4,22 @@ import React from 'react';
 function Booklist() {
   return (
     <div className="App">
-      <section>
       <h1>Dashboard</h1>
       <header className="d-header">
         <div className="top-left">This is where the logo will be</div>
-        <div className="h-center">
+        {/* <div className="h-center">
           <label>Book Title</label>
           <input type="text" name='Title' placeholder="Book Title"/>
             <button type="submit" placeholder="search">
               <a href="index.html">Search</a>
             </button>
-        </div>
+        </div> */}
         <div className="top-right">
-          <a href="dashboard.html">Home</a>
-          <a href="index.html">Log out</a>
-        </div>
+            <ul className='link'>
+              <li><a href="dashboard.html">Home</a></li>
+              <li><a href="index.html">Log Out</a></li>
+            </ul>
+          </div>
       </header>
 
       <main className="d-middle">
@@ -55,23 +56,10 @@ function Booklist() {
 
         <div className="book-list">
 
-           <a href="bookInfo.html" className="bookInfo">
-            <div className="book">
-              
-              <cite>
-                <h3>
-                Little red riding hood.
-                </h3>
-              </cite>
-              <address>
-                placeholder
-              </address>
-            </div>
-          </a>
+           
 
           <a href="bookInfo.html" className="bookInfo">
             <div className="book">
-              
               <cite>
                 <h3>
                 Little red riding hood.
@@ -83,50 +71,8 @@ function Booklist() {
             </div>
           </a>
 
-          <a href="bookInfo.html" className="bookInfo">
-            <div className="book">
-              
-              <cite>
-                <h3>
-                Little red riding hood.
-                </h3>
-              </cite>
-              <address>
-                placeholder
-              </address>
-            </div>
-          </a>
-
-          <a href="bookInfo.html" className="bookInfo">
-            <div className="book">
-              
-              <cite>
-                <h3>
-                Little red riding hood.
-                </h3>
-              </cite>
-              <address>
-                placeholder
-              </address>
-            </div>
-          </a>
-
-           <a href="bookInfo.html" className="bookInfo">
-            <div className="book">
-              
-              <cite>
-                <h3>
-                Little red riding hood.
-                </h3>
-              </cite>
-              <address>
-                placeholder
-              </address>
-            </div>
-          </a>
         </div>
       </main>
-    </section>
     </div>
   );
 }

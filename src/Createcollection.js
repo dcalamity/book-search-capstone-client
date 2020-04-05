@@ -4,13 +4,43 @@ import React, { Component } from 'react';
 class Createcollection extends Component {
   constructor(props) {
       super(props);
-      this.state = { };
+      this.state = {
+        collectionName :{
+          value: ''
+        }
+       };
+  }
+
+  addCollectionName(collectionName) {
+    this.setState({collectionName: {value: collectionName}})
   }
 
   componentDidMount() {
       console.log('Stateful component Create Collection successfully mounted.');
   }
 
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+      console.log(this.state)
+      fetch(``)
+        .then(response => {
+          if (response.ok) {
+              return response.json();
+          }
+          throw new Error(response.statusText);
+        })
+        .then(data => {
+          console.log(data)
+          //here we will have user sign up processing
+          this.setState({
+            LogInUserID: 55
+          });
+        })
+       .catch(err => {
+          console.log(err);
+        });   
+   }
 
 
   render() {
@@ -21,11 +51,21 @@ class Createcollection extends Component {
         <div className="App">
         <section>
         <h1>Dashboard</h1>
-        <header className="c-collection">
-          <div className="top-left">This is where the logo will be</div>
+        <header className="d-header">
+          <div className="top-left"></div>
+          {/* <div className="h-center">
+              <label>Book Title</label>
+              <input type="text" name='Title' placeholder="Book Title"/>
+              <button type="submit" placeholder="search">
+                <a href="dashboardBooklist.html">Search</a>
+              </button>
+          </div> */}
           <div className="top-right">
-            <a href="index.html">Log Out</a>
-            <a href="dashboard.html">Home</a>
+            <ul className='link'>
+              <li><a href="/user/dash">Home</a></li>
+              <li><a href="/">Log Out</a></li>
+            </ul>
+            
           </div>
         </header>
   
@@ -43,11 +83,11 @@ class Createcollection extends Component {
   
           
             <div className="book-search">
-               <section className="Collection-entry">
+               <form className="Collection-entry" onSubmit={this.handleSubmit}>
                   <label>Collection Name: </label>
-                  <input type="text" name='Collection name' placeholder="2019 Books Read"/>
-                  <button><a href="dashboardBooklist.html">Create List</a></button>
-                </section>
+                  <input type="text" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)}/>
+                  <button type="submit">Create List</button>
+                </form>
             </div>
           
         </main>

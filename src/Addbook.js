@@ -21,6 +21,7 @@ class Addbook extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.state.search)
     
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}&key=AIzaSyAOOYu0LFVQ45qOFjMl11H8Mdr2NYDxLqU`)
     .then(response => response.json())
@@ -37,11 +38,21 @@ class Addbook extends Component {
         <div className="App">
         <section>
         <h1>Dashboard</h1>
-        <header className="b-middle">
-          <div className="top-left">This is where the logo will be</div>
+        <header className="d-header">
+          <div className="top-left"></div>
+          {/* <div className="h-center">
+              <label>Book Title</label>
+              <input type="text" name='Title' placeholder="Book Title"/>
+              <button type="submit" placeholder="search">
+                <a href="dashboardBooklist.html">Search</a>
+              </button>
+          </div> */}
           <div className="top-right">
-            <a href="dashboard.html">Home</a>
-            <a href="index.html">Log Out</a>
+            <ul className='link'>
+              <li><a href="/user/dash">Home</a></li>
+              <li><a href="/">Log Out</a></li>
+            </ul>
+            
           </div>
         </header>
         <main className="d-middle">
@@ -76,7 +87,7 @@ class Addbook extends Component {
           </div>
           <div className="book-list">
             <div className="b-place">
-              <div className="h-center">
+              <div>
               <label>Book Title</label>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)}/>
