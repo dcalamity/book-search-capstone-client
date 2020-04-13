@@ -16,8 +16,8 @@ function Booklist() {
         </div> */}
         <div className="top-right">
             <ul className='link'>
-              <li><a href="dashboard.html">Home</a></li>
-              <li><a href="index.html">Log Out</a></li>
+              <li><a href="/user/dash">Home</a></li>
+              <li><a href="/">Log Out</a></li>
             </ul>
           </div>
       </header>
@@ -30,27 +30,27 @@ function Booklist() {
 
             <div className="list-flex">
               <h3>
-                <a href="dashboardBooklist.html">
+                <a href="/booklist/show">
                     Scary Book list
                 </a>
               </h3>
               <div>
-                <a href="addbooktolist.html">Add a book</a>
+                <a href="/book/create">Add a book</a>
               </div>
             </div>
 
             <div className="list-flex">
               <h3>
-                <a href="dashboardBooklist.html">
-                  Funny Books
+                <a href="/booklist/show">
+                  Funny Book
                 </a>
               </h3>
               <div>
-                <a href="addbooktolist.html">Add a book</a>
+                <a href="/book/create/">Add a book</a>
               </div>
             </div>
 
-            <button><a href="createCollection.html">Add a collection</a></button>
+            <button><a href="/booklist/create/">Add a collection</a></button>
           </div>
         </div>
 
@@ -58,7 +58,7 @@ function Booklist() {
 
            
 
-          <a href="bookInfo.html" className="bookInfo">
+          <a href="/book/show/" className="bookInfo">
             <div className="book">
               <cite>
                 <h3>

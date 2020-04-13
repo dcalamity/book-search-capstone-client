@@ -126,7 +126,7 @@ class Signup extends Component {
             </div>
             <button className="s-button" type="submit">Sign Up</button>
             <div>
-                <a href="/LogIn">Already have an account? Log in here!</a>
+                <a href="/user/login">Already have an account? Log in here!</a>
               </div>
           </form>
         </div>

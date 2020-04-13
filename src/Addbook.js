@@ -44,7 +44,7 @@ class Addbook extends Component {
               <label>Book Title</label>
               <input type="text" name='Title' placeholder="Book Title"/>
               <button type="submit" placeholder="search">
-                <a href="dashboardBooklist.html">Search</a>
+                <a href="/booklist/show/">Search</a>
               </button>
           </div> */}
           <div className="top-right">
@@ -61,26 +61,26 @@ class Addbook extends Component {
               <h2>Collection</h2>
               <div className="list-flex">
                 <h3>
-                  <a href="dashboardBooklist.html">
+                  <a href="/booklist/show/">
                       Scary Book list
                   </a>
                 </h3>
                 <div>
-                  <a href="addbooktolist.html">Add a book</a>
+                  <a href="/book/create">Add a book</a>
                 </div>
               </div>
               <div className="list-flex">
                 <h3>
-                  <a href="dashboardBooklist.html">
+                  <a href="/booklist/show/">
                     Funny Books
                   </a>
                 </h3>
                 <div>
-              <a href="addbooktolist.html">Add a book</a>
+              <a href="/book/create">Add a book</a>
             </div>
               </div>
               <button>
-                <a href="createCollection.html">
+                <a href="/booklist/create/">
                   Add list
                 </a></button>
             </div>

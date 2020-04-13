@@ -7,12 +7,22 @@ function Bookinfo() {
       <section>
       <h1>Book Info</h1>
       <header className="d-header">
-        <div className="top-left">This is where the logo will be</div>
-        <div className="top-right">
-          <a href="dashboard.html">Home</a>
-          <a href="index.html">Log Out</a>
-        </div>
-      </header>
+          <div className="top-left">Logo</div>
+          {/* <div className="h-center">
+              <label>Book Title</label>
+              <input type="text" name='Title' placeholder="Book Title"/>
+              <button type="submit" placeholder="search">
+                <a href="dashboardBooklist.html">Search</a>
+              </button>
+          </div> */}
+          <div className="top-right">
+            <ul className='link'>
+              <li><a href="/user/dash">Home</a></li>
+              <li><a href="/">Log Out</a></li>
+            </ul>
+            
+          </div>
+        </header>
 
       <main className="b-square">
 
@@ -26,12 +36,23 @@ function Bookinfo() {
             <h3>Author</h3>
             <p>Comments</p>
           </div>
-
-           <div>
+          <div className="infomiddle">
+            <form action="#" method="post" className='textbox'>
+            <textarea> 
+              This is a simple comment box. 
+            </textarea>
+            <button type='submit'>Submit</button>
+          </form>
+          </div> 
+          <div>
             <label>Choose a collection:</label>
             <select id="Collections" label="collection names">
-              <option value="Scary Books">Scary Books</option>
-              <option value="Funny Books">Funny Books</option>
+              <option value="Scary Books">
+                Scary Books
+              </option>
+              <option value="Funny Books">
+                Funny Books
+              </option>
             </select> 
           </div>  
         </div>

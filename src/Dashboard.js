@@ -35,27 +35,27 @@ function Dashboard() {
               <h2>Collection</h2>
               <div className="list-flex">
                 <h3>
-                  <a href="dashboardBooklist.html">
+                  <a href="/booklist/show/">
                       Scary Book list
                   </a>
                 </h3>
                 <div>
-                  <a href="addbooktolist.html">Add a book</a>
+                  <a href="/book/create">Add a book</a>
                 </div>
               </div>
 
               <div className="list-flex">
                 <h3>
-                  <a href="dashboardBooklist.html">
+                  <a href="/booklist/show">
                     Funny Books
                   </a>
                 </h3>
                 <div>
-              <a href="addbooktolist.html">Add a book</a>
+              <a href="/book/create">Add a book</a>
             </div>
               </div>
               <button>
-                <a href="createCollection.html">
+                <a href="/booklist/create">
                   Add list
                 </a></button>
             </div>

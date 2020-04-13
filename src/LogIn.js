@@ -84,7 +84,7 @@ class LogIn extends Component {
                   <button className="s-button" type="submit">Sign In
                   </button>
                   <div>
-                    <a href="index.html">Don't have an account yet? Create one here!</a>
+                    <a href="/">Don't have an account yet? Create one here!</a>
                   </div>    
                  </div>
                   
