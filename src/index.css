@@ -216,12 +216,54 @@
  }
  
  .infomiddle{
-  background-color: lightgreen;
-  display: flex;
+  /* background-color:white; */
   padding: 1%;
-  justify-content: space-between;
-  flex-direction: column;
+  width: 30%;
+  margin-top: 5%;
  }
+
+ .commentbox {
+  width: 84%;
+  height: 80px;
+  /* background-color: lightgrey; */
+  }
+
+  .sbtcm {
+    width: 50%;
+    position: relative;
+    top: 6px;
+    height: 10px;
+    left: 40px;
+  }
+ .bubble-content {
+  position:r elative;
+  float: left;
+  margin-left: 12px;
+  width: 400px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+  }
+  .bubble {
+    margin-top: 20px;
+  }
+   .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content:  “.”;
+    clear: both;
+    height: 0;
+    line-height:
+    }
+  .clearfix {
+    display: inline-block;
+  }
+  
+  .clearfix {
+    height: 1%;
+  }
 
  .textbox{
    padding-left:10%;
@@ -235,3 +277,4 @@
    align-content: center;
    align-items: center;
  }
+
