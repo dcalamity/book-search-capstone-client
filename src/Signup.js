@@ -116,7 +116,7 @@ class Signup extends Component {
             <div className="input-pwd">
               <label>Password</label>
               <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
-              {/* <button className="s-button" type="submit">Sign Up</button> */}
+              {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
             </div>
 
             <div className="input-pwd">
