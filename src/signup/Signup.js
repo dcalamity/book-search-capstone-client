@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ValidationError from './validationError'
+import ValidationError from '../validationError'
 
 class Signup extends Component {
 

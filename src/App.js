@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Signup from './Signup';
-import Footer from './Footer'
-import LogIn from './LogIn';
-import Dashboard from './Dashboard';
-import Createcollection from './Createcollection';
-import Bookinfo from './Bookinfo';
-import Addbook from './Addbook';
+import Signup from './signup/Signup';
+import Footer from './footer/Footer'
+import LogIn from './login/LogIn';
+import Dashboard from './dashboard/Dashboard';
+import Createcollection from './createcollection/Createcollection';
+import Bookinfo from './bookinfo/Bookinfo';
+import Addbook from './addbook/Addbook';
 import NotFound from './NotFound';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
-import Booklist from './Booklist';
+import Booklist from './booklist/Booklist';
 
 
 class App extends Component {

@@ -1,6 +1,6 @@
 import React from 'react';
-import Booklist from './Booklist';
-import Footer from './Footer'
+import Booklist from '../booklist/Booklist';
+import Footer from '../footer/Footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 

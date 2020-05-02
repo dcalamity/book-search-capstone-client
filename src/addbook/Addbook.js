@@ -40,19 +40,11 @@ class Addbook extends Component {
         <h1>Dashboard</h1>
         <header className="d-header">
           <div className="top-left"></div>
-          {/* <div className="h-center">
-              <label>Book Title</label>
-              <input type="text" name='Title' placeholder="Book Title"/>
-              <button type="submit" placeholder="search">
-                <a href="/booklist/show/">Search</a>
-              </button>
-          </div> */}
           <div className="top-right">
             <ul className='link'>
               <li><a href="/user/dash">Home</a></li>
               <li><a href="/">Log Out</a></li>
             </ul>
-            
           </div>
         </header>
         <main className="d-middle">
