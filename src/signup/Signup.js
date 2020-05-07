@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ValidationError from '../validationError'
+import AuthApiService from '../services/auth-api-service';
 
 class Signup extends Component {
 
@@ -42,26 +43,28 @@ class Signup extends Component {
     this.setState({ repeatPassword: { value: repeatPassword, touched: true } });
 }
 
+handleLoginSuccess = user => {
+  window.location = '/user/login'
+}
+
   handleSubmit = (event) => {
-    event.preventDefault();
-      console.log(this.state)
-      fetch(``)
-        .then(response => {
-          if (response.ok) {
-              return response.json();
-          }
-          throw new Error(response.statusText);
+    event.preventDefault()
+    const { userName, password, repeatPassword } = event.target
+    this.setState({ error: null })
+    AuthApiService.postUser({
+        user_name: userName.value,
+        password: password.value,
+    })
+        .then(user => {
+          console.log(user)
+            userName.value = ''
+            password.value = ''
+            repeatPassword.value = ''
+            this.handleLoginSuccess()
         })
-        .then(data => {
-          console.log(data)
-          //here we will have user sign up processing
-          this.setState({
-            LogInUserID: 55
-          });
-        })
-       .catch(err => {
-          console.log(err);
-        });   
+        .catch(res => {
+            this.setState({ error: res.error })
+        })  
    }
 
     validateUserName() {
@@ -87,8 +90,8 @@ class Signup extends Component {
 
   render() {
       // const { name } = this.props;
-      const { LogInUserID } = this.state;
-      console.log(LogInUserID)
+      // const { LogInUserID } = this.state;
+      // console.log(LogInUserID)
 
       return (
         <main className="landing">
@@ -109,19 +112,19 @@ class Signup extends Component {
 
             <div className="input-user">
               <label htmlFor='username'>Username</label>
-              <input type="text" name='Username' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
+              <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
               {this.state.userName.touched && (<ValidationError message={this.validateUserName()} />)}
             </div>
 
             <div className="input-pwd">
               <label>Password</label>
-              <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
+              <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
               {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
             </div>
 
             <div className="input-pwd">
               <label>Repeat Password</label>
-              <input type="Password" name='Password' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)}/>
+              <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)}/>
               
             </div>
             <button className="s-button" type="submit">Sign Up</button>
