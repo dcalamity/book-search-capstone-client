@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
+import ValidationError from '../validationError';
+import TokenService from '../services/token-service';
+import AuthApiService from '../services/auth-api-service';
+import config from '../config';
 
 class LogIn extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      username: {
+      userName: {
         value: ''
       },
       password: {
         value: ''
       },
-      LogInUserID: 0
+      LogInUserID: 0,
+      error: null,
      };
   }
 
-  changeUsername(username) {
-    this.setState({username: {value: username}});
+  changeUsername(userName) {
+    this.setState({userName: {value: userName}});
   }
 
   changePassword(password) {
