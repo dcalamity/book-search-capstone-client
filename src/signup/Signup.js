@@ -44,7 +44,7 @@ class Signup extends Component {
 }
 
 handleLoginSuccess = user => {
-  window.location = '/user/login'
+  window.location = '/user/dash'
 }
 
   handleSubmit = (event) => {

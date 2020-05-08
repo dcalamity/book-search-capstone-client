@@ -19,6 +19,10 @@ class LogIn extends Component {
      };
   }
 
+  handleLoginSuccess = () => {
+    window.location = '/user/dash'
+  }
+
   changeUsername(userName) {
     this.setState({userName: {value: userName}});
   }
@@ -33,38 +37,33 @@ class LogIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-      console.log(this.state)
-      fetch(``)
-        .then(response => {
-          if (response.ok) {
-              return response.json();
-          }
-          throw new Error(response.statusText);
-        })
-        .then(data => {
-          console.log(data)
-          //here we will have user sign up processing
-          this.setState({
-            LogInUserID: 55
-          });
-        })
-       .catch(err => {
-          console.log(err);
-        });   
+    const { userName, password} = event.target
+
+    AuthApiService.postLogin({
+      userName: userName.value,
+      password: password.value,
+    })
+
+    .then(response => {
+      console.log(response)
+      userName.value = ''
+      password.value = ''
+      TokenService.saveAuthToken(response.authToken)
+      TokenService.saveUserId(response.userID)
+      fetch(`${config.API_ENDPOINT}/met/interval`)
+      window.location ='/user/dash'
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });   
    }
           
-          
-          // this.setState({
-          //   LogInUserID: [outputObject]
-          // });
-          // console.log(outputObject);
-       
-
   render() {
-      // const { name } = this.props;
-      // const { isLiked } = this.state;
 
-      return (
+    return (
         <div className="App">
           <section>
             <div className="header">
@@ -83,21 +82,21 @@ class LogIn extends Component {
               <form onSubmit={this.handleSubmit} className="input-pwd">
                 <div className="input-user">
                   <label>Username</label>
-                  <input type="text" name='Username' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
+                  <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
                   <label>Password</label>
-                  <input type="Password" name='Password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
+                  <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
                   <button className="s-button" type="submit">Sign In
                   </button>
                   <div>
                     <a href="/">Don't have an account yet? Create one here!</a>
                   </div>    
-                 </div>
-                  
+                  </div>
+
               </form>
               </div>
           </section>
       </div>
-      );
+    );
   }
 }
 
