@@ -87,6 +87,13 @@ handleLoginSuccess = user => {
     }
   }
 
+  validateRepeatPassword(){
+    const repeatPassword = this.state.repeatPassword.value.trim();
+    const password = this.state.password.value.trim();
+    if (repeatPassword != password) {
+      return <p className='input-error'>Passwords do not match</p>;
+    }
+  }
 
   render() {
       // const { name } = this.props;
@@ -125,7 +132,7 @@ handleLoginSuccess = user => {
             <div className="input-pwd">
               <label>Repeat Password</label>
               <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)}/>
-              
+              {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
             </div>
             <button className="s-button" type="submit">Sign Up</button>
             <div>
