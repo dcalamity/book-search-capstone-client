@@ -10,10 +10,11 @@ const AuthApiService = {
         body: JSON.stringify(credentials),
 
       })
-      .then(res => {
+      .then(res =>
         (!res.ok) ?
-        res.json().then(e => Promise.reject(e)): res.json()
-      })
+        res.json().then(e => Promise.reject(e)) :
+        res.json()
+      )
       .catch(err => {
         console.log('error:', err)
       })

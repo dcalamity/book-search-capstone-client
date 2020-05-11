@@ -5,22 +5,24 @@ import AuthApiService from '../services/auth-api-service';
 class Signup extends Component {
 
   constructor(props) {
-      super(props);
-      this.state = { 
+    super(props);
+    this.state = {
         userName: {
-          value: '',
-          touched: false
-      },
-      password: {
-        value: '',
-        touched: false
-       },
-       repeatPassword: {
-        value: '',
-        touched: false
-    },
-        LogInUserID: 0
-       };
+            value: '',
+            touched: false
+        },
+        password: {
+            value: '',
+            touched: false
+        },
+        repeatPassword: {
+            value: '',
+            touched: false
+        },
+        LogInUserID: 0,
+        // submitButtonDisabled: 'disabled',
+        submitButtonDisabled: ''
+    };
   }
 
   componentDidMount() {
@@ -90,9 +92,13 @@ handleLoginSuccess = user => {
   validateRepeatPassword(){
     const repeatPassword = this.state.repeatPassword.value.trim();
     const password = this.state.password.value.trim();
+    // this.setState({submitButtonDisabled: 'disabled'});
     if (repeatPassword != password) {
       return <p className='input-error'>Passwords do not match</p>;
-    }
+    } 
+    // else {
+    //     this.setState({submitButtonDisabled: ''});
+    // }
   }
 
   render() {
@@ -134,7 +140,7 @@ handleLoginSuccess = user => {
               <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)}/>
               {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
             </div>
-            <button className="s-button" type="submit">Sign Up</button>
+            <button className="s-button" type="submit" disabled={this.state.submitButtonDisabled}>Sign Up</button>
             <div>
                 <a href="/user/login">Already have an account? Log in here!</a>
               </div>
