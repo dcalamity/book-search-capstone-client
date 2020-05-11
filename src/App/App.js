@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 import Signup from '../signup/Signup';
 import Footer from '../footer/Footer'
 import LogIn from '../login/LogIn';
@@ -7,8 +7,8 @@ import Createcollection from '../createcollection/Createcollection';
 import Bookinfo from '../bookinfo/Bookinfo';
 import Addbook from '../addbook/Addbook';
 import NotFound from '../NotFound';
-import { Route } from 'react-router-dom';
-import '../index.css';
+import { Route } from './node_modules/react-router-dom';
+import './index.css';
 import Booklist from '../booklist/Booklist';
 
 
