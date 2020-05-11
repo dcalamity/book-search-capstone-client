@@ -1,15 +1,15 @@
 import React, { Component } from './node_modules/react';
-import Signup from '../signup/Signup';
-import Footer from '../footer/Footer'
-import LogIn from '../login/LogIn';
-import Dashboard from '../dashboard/Dashboard';
-import Createcollection from '../createcollection/Createcollection';
-import Bookinfo from '../bookinfo/Bookinfo';
-import Addbook from '../addbook/Addbook';
-import NotFound from '../NotFound';
+import Signup from './signup/Signup';
+import Footer from './footer/Footer'
+import LogIn from './login/LogIn';
+import Dashboard from './dashboard/Dashboard';
+import Createcollection from './createcollection/Createcollection';
+import Bookinfo from './bookinfo/Bookinfo';
+import Addbook from './addbook/Addbook';
+import NotFound from './NotFound';
 import { Route } from './node_modules/react-router-dom';
 import './index.css';
-import Booklist from '../booklist/Booklist';
+import Booklist from './booklist/Booklist';
 
 
 class App extends Component {
