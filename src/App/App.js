@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Signup from './signup/Signup';
-import Footer from './footer/Footer'
-import LogIn from './login/LogIn';
-import Dashboard from './dashboard/Dashboard';
-import Createcollection from './createcollection/Createcollection';
-import Bookinfo from './bookinfo/Bookinfo';
-import Addbook from './addbook/Addbook';
-import NotFound from './NotFound';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
-import './index.css';
-import Booklist from './booklist/Booklist';
+import Signup from '../signup/Signup';
+import Footer from '../footer/Footer'
+import LogIn from '../login/LogIn';
+import Dashboard from '../dashboard/Dashboard';
+import Createcollection from '../createcollection/Createcollection';
+import Bookinfo from '../bookinfo/Bookinfo';
+import Addbook from '../addbook/Addbook';
+import NotFound from '../NotFound';
+import { Route } from 'react-router-dom';
+import '../index.css';
+import Booklist from '../booklist/Booklist';
 
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
       return (
         <div>
     
-          <Switch>
+          <main>
                <Route exact path='/' component={Signup}  />
               {/* Stateful */}
               <Route path='/user/login' component={LogIn}  />
@@ -47,7 +47,7 @@ class App extends Component {
 
               <Route component={NotFound} />
               {/* Stateful */}
-          </Switch>
+          </main>
             <Footer />
         </div>
       );
