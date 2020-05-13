@@ -105,49 +105,45 @@ handleLoginSuccess = user => {
       // const { name } = this.props;
       // const { LogInUserID } = this.state;
       // console.log(LogInUserID)
-
-      return (
-        <main className="landing">
+    return (
+      <div className="App">
         <header className="header">
-          <div className="top-left">This is where the logo will be</div>
-          <div className="top-right">
+          <div>This is where the logo will be</div>
+          <nav>
             <a href="/user/login">Log In</a>
-          </div>
+          </nav>
         </header>  
-        <div className="middle">
-
+        <main className="landing">
           <div className="info">
             <h2>Description</h2>
+            <p>Laborum consectetur laboris voluptate et mollit aliqua elit aute esse. Non laboris sit duis occaecat elit ex mollit ea ipsum incididunt. Duis duis laboris mollit commodo esse et ex ea dolore laborum. Adipisicing Lorem anim dolore amet est qui veniam et dolor occaecat tempor incididunt ex non. Amet sunt ex anim Lorem deserunt aute.</p>
           </div>
-
-          <form className="sign-up" onSubmit={this.handleSubmit}>
-            <h2>Sign Up</h2>
-
-            <div className="input-user">
-              <label htmlFor='username'>Username</label>
-              <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
-              {this.state.userName.touched && (<ValidationError message={this.validateUserName()} />)}
+        <form className="sign-up" onSubmit={this.handleSubmit}>
+          <h2>Sign Up</h2>
+          <div className="">
+            <label htmlFor='username'>Username</label>
+            <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} required/>
+            {this.state.userName.touched && (<ValidationError message={this.validateUserName()} />)}
+          </div>
+          <div className="">
+            <label>Password</label>
+            <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)} required/>
+            {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
+          </div>
+          <div className="">
+            <label>Repeat Password</label>
+            <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)} required/>
+            {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
+          </div>
+          <button className="s-button" type="submit" disabled={this.state.submitButtonDisabled}>Sign Up</button>
+          <div>
+              <a href="/user/login">Already have an account? Log in here!</a>
             </div>
-
-            <div className="input-pwd">
-              <label>Password</label>
-              <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
-              {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
-            </div>
-
-            <div className="input-pwd">
-              <label>Repeat Password</label>
-              <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)}/>
-              {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
-            </div>
-            <button className="s-button" type="submit" disabled={this.state.submitButtonDisabled}>Sign Up</button>
-            <div>
-                <a href="/user/login">Already have an account? Log in here!</a>
-              </div>
-          </form>
-        </div>
-      </main> 
-      );
+        </form>
+            
+        </main> 
+      </div>
+    );
   }
 }
 

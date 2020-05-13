@@ -8,69 +8,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Dashboard() {
   return (
     <div className="App">
-        <section>
-        <h1>Dashboard</h1>
-        <header className="d-header">
-          <div className="top-left"></div>
-          {/* <div className="h-center">
-              <label>Book Title</label>
-              <input type="text" name='Title' placeholder="Book Title"/>
-              <button type="submit" placeholder="search">
-                <a href="dashboardBooklist.html">Search</a>
-              </button>
-          </div> */}
-          <div className="top-right">
+        <header>
+          <div>Logo</div>
+          <nav className="top-right">
             <ul className='link'>
               <li><a href="/user/dash">Home</a></li>
               <li><a href="/">Log Out</a></li>
             </ul>
-            
-          </div>
+          </nav>
         </header>
 
-        <main className="d-middle">
-
-          <div className="c-list">
-            <div className="l-book">
-              <h2>Collection</h2>
-              <div className="list-flex">
-                <h3>
-                  <a href="/booklist/show/">
-                      Scary Book list
-                  </a>
-                </h3>
-                <div>
-                  <a href="/book/create">Add a book</a>
-                </div>
-              </div>
-
-              <div className="list-flex">
-                <h3>
-                  <a href="/booklist/show">
-                    Funny Books
-                  </a>
-                </h3>
-                <div>
-              <a href="/book/create">Add a book</a>
-            </div>
-              </div>
-              <button>
-                <a href="/booklist/create">
-                  Add list
-                </a></button>
-            </div>
-            
-            
-          </div>
+        <main className="d-main">
           
-
-          <div className="book-list">
-            <div className="b-place">
-              <h2>Click on a collection to see your books!</h2>
+          <div className="c-list">
+            <h2>Collection</h2>
+            
+            <div className="list">
+              <a href="/booklist/show/"><h3>Scary Book list</h3></a><a href="/book/add">Add a book</a>
             </div>
+            
+            <div className="list">
+              <a href="/booklist/show"><h3>Funny Books</h3></a><a href="/book/add">Add a book</a>
+            </div>
+
+            <button className="s-button"><a href="/booklist/create">Add list</a></button>
+          </div>
+         
+          <div className="book-list">
+            <h2>Click on a collection to see your books!</h2>
           </div>
         </main>
-      </section>
     </div>
   );
 }

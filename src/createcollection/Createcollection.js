@@ -49,49 +49,35 @@ class Createcollection extends Component {
 
       return (
         <div className="App">
-        <section>
-        <h1>Dashboard</h1>
-        <header className="d-header">
-          <div className="top-left"></div>
-          {/* <div className="h-center">
-              <label>Book Title</label>
-              <input type="text" name='Title' placeholder="Book Title"/>
-              <button type="submit" placeholder="search">
-                <a href="dashboardBooklist.html">Search</a>
-              </button>
-          </div> */}
-          <div className="top-right">
+        <header>
+          <div>Logo</div>
+          <nav className="top-right">
             <ul className='link'>
               <li><a href="/user/dash">Home</a></li>
               <li><a href="/">Log Out</a></li>
             </ul>
-            
-          </div>
+          </nav>
         </header>
-  
-        <main className="d-middle">
-  
+
+        <main className="d-main">
           <div className="c-list">
-            <div className="l-book">
-              <h2>Make your collection</h2>
-              <div>
-               
-              </div>
+            <h2>Add a collection</h2>
+            <div className="list">
+              <a href="/booklist/show/"><h3>Scary Book list</h3></a><a href="/book/add">Add a book</a>
+            </div>
+            <div className="list">
+              <a href="/booklist/show"><h3>Funny Books</h3></a><a href="/book/add">Add a book</a>
             </div>
           </div>
-          
-  
-          
-            <div className="book-search">
-               <form className="Collection-entry" onSubmit={this.handleSubmit}>
-                  <label>Collection Name: </label>
-                  <input type="text" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)}/>
-                  <button type="submit">Create List</button>
-                </form>
-            </div>
+          <div className="book-list">
+            <form id="booksearch" onSubmit={this.handleSubmit}>
+              <label>Collection Name: </label>
+              <input type="text" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)}/>
+              <button type="submit">Create List</button>
+            </form>
+          </div>
           
         </main>
-      </section>
       </div>
       );
   }

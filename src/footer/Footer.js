@@ -5,10 +5,8 @@ function Footer() {
   return (
     <section>
       <div className="footer">
-        <div className="top-left">
-          © 2020 Eduardo Gonzalez
-        </div>
-        <div className="top-right">
+        <div className="ft-txt">
+          <h2>© 2020 Eduardo Gonzalez</h2>
         </div>
       </div>
   </section>

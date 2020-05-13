@@ -29,24 +29,21 @@ class App extends Component {
       // const { isLiked } = this.state;
       return (
         <div>
-    
-          <main>
-               <Route exact path='/' component={Signup}  />
-              {/* Stateful */}
-              <Route path='/user/login' component={LogIn}  />
-              
-              <Route path='/user/dash' component={Dashboard}  />
+          <Route exact path='/' component={Signup}  />
+          {/* Stateful */}
+          <Route path='/user/login' component={LogIn}  />
+          
+          <Route path='/user/dash' component={Dashboard}  />
 
-              <Route path='/booklist/show' component={Booklist}  />
-              
-              <Route path='/booklist/create' component={Createcollection}  />
-              {/* Stateful */}
-              <Route path='/book/show' component={Bookinfo}  />
-              {/* Stateful */}
-              <Route path='/book/create' component={Addbook}  />
-              {/* Stateful */}
-          </main>
-            <Footer />
+          <Route path='/booklist/show' component={Booklist}  />
+          {/* three down need to redo css */}
+          <Route path='/booklist/create' component={Createcollection}  />
+          {/* Stateful */}
+          <Route path='/book/show' component={Bookinfo}  />
+          {/* Stateful */}
+          <Route path='/book/add' component={Addbook}  />
+          {/* Stateful */}
+          <Footer />
         </div>
       );
   }
