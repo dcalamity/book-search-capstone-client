@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TokenService from '../services/token-service.js';
 
 function Booklist() {
   return (
@@ -8,8 +8,11 @@ function Booklist() {
           <div>Logo</div>
           <nav className="top-right">
             <ul className='link'>
-              <li><a href="/user/dash">Home</a></li>
-              <li><a href="/">Log Out</a></li>
+            <li>
+              <a href="/user/dash">Home
+              </a>
+            </li>
+            <li><a href="/">Log Out</a></li>
             </ul>
           </nav>
         </header>

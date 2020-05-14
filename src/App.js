@@ -10,6 +10,7 @@ import NotFound from './NotFound';
 import { Route } from 'react-router-dom';
 import './index.css';
 import Booklist from './booklist/Booklist';
+import TokenService from './services/token-service.js';
 
 
 class App extends Component {

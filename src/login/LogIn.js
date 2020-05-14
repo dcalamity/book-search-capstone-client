@@ -38,19 +38,19 @@ class LogIn extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { userName, password} = event.target
-
+    console.log('username:', userName.value, "password:" , password.value);
     AuthApiService.postLogin({
       userName: userName.value,
       password: password.value,
     })
 
     .then(response => {
-      console.log(response)
+      console.log("response ID", response)
       userName.value = ''
       password.value = ''
       TokenService.saveAuthToken(response.authToken)
-      TokenService.saveUserId(response.userID)
-      fetch(`${config.API_ENDPOINT}/met/interval`)
+      TokenService.saveUserId(response.userId)
+      // fetch(`${config.API_ENDPOINT}/met/interval`)
       window.location ='/user/dash'
     })
     .then(response => {
@@ -75,9 +75,9 @@ class LogIn extends Component {
           <main className="login">
             <form onSubmit={this.handleSubmit} className="input-lgn">
               <label>Username</label>
-              <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
+              <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
               <label>Password</label>
-              <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
+              <input type="Password" id='password' name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
               <button className="s-button" type="submit">Sign In
               </button>
               <a href="/">Don't have an account yet? Create one here!</a>
