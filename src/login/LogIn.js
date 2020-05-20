@@ -54,7 +54,7 @@ class LogIn extends Component {
       window.location ='/user/dash'
     })
     .then(response => {
-      console.log(response)
+      console.log("response:",response)
     })
     .catch(err => {
       console.log(err);
@@ -74,8 +74,9 @@ class LogIn extends Component {
         <section>
           <main className="login">
             <form onSubmit={this.handleSubmit} className="input-lgn">
+              <h2>Log In</h2>
               <label>Username</label>
-              <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)}/>
+              <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} />
               <label>Password</label>
               <input type="Password" id='password' name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
               <button className="s-button" type="submit">Sign In

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TokenService from '../services/token-service.js';
 
 class Addbook extends Component {
   constructor(props) {
@@ -36,64 +37,56 @@ class Addbook extends Component {
 
       return (
         <div className="App">
-        <section>
-        <h1>Dashboard</h1>
-        <header className="d-header">
-          <div className="top-left"></div>
-          <div className="top-right">
-            <ul className='link'>
-              <li><a href="/user/dash">Home</a></li>
-              <li><a href="/">Log Out</a></li>
-            </ul>
-          </div>
-        </header>
-        <main className="d-middle">
-          <div className="c-list">
-            <div className="l-book">
+          <header>
+            <div>Logo</div>
+            <nav className="top-right">
+              <ul className='link'>
+                <li>
+                  <a href="/user/dash">Home {TokenService.getUserId()} 
+                  </a>
+                </li>
+                <li>
+                  <a href="/">Log Out</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main className="d-main">
+            <div className="c-list">
               <h2>Collection</h2>
-              <div className="list-flex">
-                <h3>
-                  <a href="/booklist/show/">
-                      Scary Book list
-                  </a>
-                </h3>
-                <div>
-                  <a href="/book/create">Add a book</a>
-                </div>
+              
+              <div className="list">
+                <a href="/booklist/show/">
+                  <h3>Scary Book list</h3>
+                </a>
+                <a href="/book/add">Add a book</a>
               </div>
-              <div className="list-flex">
-                <h3>
-                  <a href="/booklist/show/">
-                    Funny Books
-                  </a>
-                </h3>
-                <div>
-              <a href="/book/create">Add a book</a>
-            </div>
+              
+              <div className="list">
+                <a href="/booklist/show">
+                  <h3>Funny Books</h3>
+                </a>
+                <a href="/book/add">Add a book</a>
               </div>
-              <button>
-                <a href="/booklist/create/">
-                  Add list
-                </a></button>
+
+              <button className="s-button">
+                <a href="/booklist/create">Add list</a>
+              </button>
             </div>
-          </div>
-          <div className="book-list">
-            <div className="b-place">
+
+            <div className="book-list">
               <div>
-              <label>Book Title</label>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)}/>
-                <button type="submit">
-                  search
-                </button>
+                <form id="search" onSubmit={this.handleSubmit}>
+                  <label>Book Name</label>
+                  <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)}/>
+                  <button className="searchButton" type="submit">
+                    search
+                  </button>
               </form>
-              
-              
               </div>
+              
             </div>
-          </div>
-        </main> 
-      </section>
+          </main> 
       </div>
       );
   }
