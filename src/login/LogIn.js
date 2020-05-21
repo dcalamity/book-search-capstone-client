@@ -66,6 +66,7 @@ class LogIn extends Component {
     return (
       <div className="App">
         <header className="header">
+          {TokenService.getUserId()}
           <div>Logo</div>
           <nav>
             <a href="/">Sign Up</a>
@@ -74,6 +75,7 @@ class LogIn extends Component {
         <section>
           <main className="login">
             <form onSubmit={this.handleSubmit} className="input-lgn">
+            
               <h2>Log In</h2>
               <label>Username</label>
               <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} />

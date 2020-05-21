@@ -98,15 +98,15 @@ class Createcollection extends Component {
       // const { name } = this.props;
       // const { isLiked } = this.state;
     const listofcollections = this.state.collectionsByUserId.map((collection, key) => {
-      const linkString = `/booklist/show/${collection.id}`
-      console.log(collection.id)
+      const linkString = `/booklist/show${collection.id}`
+      // console.log(collection.id)
 
     return (
     <div className="list" key={key}>
       <a href={linkString} >
       <h3>{collection.collection_name}</h3>
       </a>
-      <a href="/book/add">Add a book</a>
+      <a href={`/book/add${collection.id}`}>Add a book</a>
     </div>)
     
     });

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ValidationError from '../validationError'
 import AuthApiService from '../services/auth-api-service';
-// import TokenService from '../services/token-service.js';
-// import config from '../config';
+import TokenService from '../services/token-service.js';
+import config from '../config';
 
 class Signup extends Component {
 
@@ -110,6 +110,7 @@ handleLoginSuccess = user => {
     return (
       <div className="App">
         <header className="header">
+        {TokenService.getUserId()} 
           <div>This is where the logo will be</div>
           <nav>
             <a href="/user/login">Log In</a>

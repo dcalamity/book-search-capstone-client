@@ -109,7 +109,7 @@ main {
 form {
   background-color: lightgray;
   width: 20%;
-  height: 300px;
+  /* height: 300px; */
   margin: 2%;
   margin-right: 10%;
   margin-top: 10%;
@@ -144,6 +144,10 @@ input[type='comment'] {
   box-sizing: border-box;
   border: 1px solid blVack;
   border-radius: 4px;
+}
+
+.input-error{
+  color: red;
 }
 /* book search form  */
 

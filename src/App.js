@@ -42,7 +42,7 @@ class App extends Component {
           {/* Stateful */}
           <Route path='/book/show/' component={Bookinfo}  />
           {/* Stateful */}
-          <Route path='/book/add' component={Addbook}  />
+          <Route path='/book/add:collectionId' component={Addbook}  />
           {/* Stateful */}
           <Footer />
         </div>
