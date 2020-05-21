@@ -1,11 +1,12 @@
 import React from 'react';
 import TokenService from '../services/token-service.js';
 
-function Booklist() {
+function Booklist(props) {
+  console.log(props)
   return (
     <div className="App">
       <header>
-          <div>Logo</div>
+        <div>Logo {props.match.params.collectionId}</div>
           <nav className="top-right">
             <ul className='link'>
             <li>

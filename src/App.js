@@ -6,11 +6,11 @@ import Dashboard from './dashboard/Dashboard';
 import Createcollection from './createcollection/Createcollection';
 import Bookinfo from './bookinfo/Bookinfo';
 import Addbook from './addbook/Addbook';
-import NotFound from './NotFound';
+// import NotFound from './NotFound';
 import { Route } from 'react-router-dom';
 import './index.css';
 import Booklist from './booklist/Booklist';
-import TokenService from './services/token-service.js';
+// import TokenService from './services/token-service.js';
 
 
 class App extends Component {
@@ -36,11 +36,11 @@ class App extends Component {
           
           <Route path='/user/dash' component={Dashboard}  />
 
-          <Route path='/booklist/show' component={Booklist}  />
+          <Route path='/booklist/show:collectionId' component={Booklist}  />
           {/* three down need to redo css */}
           <Route path='/booklist/create' component={Createcollection}  />
           {/* Stateful */}
-          <Route path='/book/show' component={Bookinfo}  />
+          <Route path='/book/show/' component={Bookinfo}  />
           {/* Stateful */}
           <Route path='/book/add' component={Addbook}  />
           {/* Stateful */}

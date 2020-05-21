@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ValidationError from '../validationError'
 import AuthApiService from '../services/auth-api-service';
-import TokenService from '../services/token-service.js';
-import config from '../config';
+// import TokenService from '../services/token-service.js';
+// import config from '../config';
 
 class Signup extends Component {
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TokenService from '../services/token-service.js';
 import config from '../config';
-import List from '../list'
+// import List from '../list'
 
 class Createcollection extends Component {
   constructor(props) {
@@ -97,12 +97,14 @@ class Createcollection extends Component {
     // console.log(this.state)
       // const { name } = this.props;
       // const { isLiked } = this.state;
-    const item = this.state.collectionsByUserId.map((item, key) => {
-      // console.log(item.collection_name)
+    const listofcollections = this.state.collectionsByUserId.map((collection, key) => {
+      const linkString = `/booklist/show/${collection.id}`
+      console.log(collection.id)
+
     return (
     <div className="list" key={key}>
-      <a href="/booklist/show" >
-        <h3>{item.collection_name}</h3>
+      <a href={linkString} >
+      <h3>{collection.collection_name}</h3>
       </a>
       <a href="/book/add">Add a book</a>
     </div>)
@@ -123,11 +125,13 @@ class Createcollection extends Component {
       </header>
       <main className="d-main">
         <div className="c-list">
-          <h2>Add a collection</h2>
-            {item}
+          <h2>Your collections</h2>
+            {listofcollections}
         </div>
         <div className="create_collection">
+          
           <form className="createcollection" onSubmit={this.handleSubmit}>
+            <h2>Add a collection</h2>
             <label>Collection Name: </label>
             <input type="text" className="collection" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)}/>
             <button type="submit" className="s-button">Create List</button>
