@@ -117,6 +117,16 @@ form {
   padding: 1%;
 }
 
+#bookSearch{
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  margin: 2%;
+  margin-right: 10%;
+  margin-top: 10%;
+  border: 1px solid black;
+  padding: 1%;
+}
 .bookinfo {
   justify-content: space-around;
   align-items: center;
@@ -159,6 +169,7 @@ input[type='comment'] {
   height: 50%;
   border: none;
   align-items: center;
+  /* pointer-events: none; */
 }
 
 .searchButton {
@@ -285,14 +296,14 @@ Footer styles (Main Module)
 */
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   background-color: lightgrey;
   text-align: center;
   height: 40px;
   width: 100%;
   padding: 2%;
-  bottom: 0px;
+  /* bottom: 0px; */
 }
 
 .ft-txt {

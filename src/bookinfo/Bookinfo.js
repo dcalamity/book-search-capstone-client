@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
+import config from '../config';
+
+class Bookinfo extends Component {
+
+  componentDidMount(){
+    const bookId = this.props.match.params.bookId;
+
+    let getCollectionByUserId = `${config.API_ENDPOINT}/books/book/${bookId}`;
+
+    console.log(getCollectionByUserId)
+
+    fetch(getCollectionByUserId)
+    .then(response => response.json())
+    .then(data => { 
+      console.log('success:', data)
+    })
+    .catch(err => {
+            console.log(err)
+      });
+  }
+
+  render() {
 
 
-function Bookinfo() {
-  return (
-    <div className="App">
+    return (
+      <div className="App">
       <section>
       <header className="d-header">
           <div className="top-left">Logo</div>
@@ -30,7 +51,8 @@ function Bookinfo() {
     </main>
     </section>
     </div>
-  );
+    )
+  }
 }
 
 export default Bookinfo;

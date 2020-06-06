@@ -43,14 +43,14 @@ class Dashboard extends Component {
     console.log(this.state)
     const listofcollections = 
         this.state.collectionsByUserId.map((collection, key) => {
-        const linkString = `/booklist/show${collection.id}`
+        const linkString = `/booklist/show/${collection.id}`
       
     return (
       <div className="list" key={key}>
         <Link to={linkString} >
           <h3>{collection.collection_name}</h3>
         </Link>
-        <Link to={`/book/add${collection.id}`}>Add a book</Link>
+        <Link to={`/book/add/${collection.id}`}>Add a book</Link>
       </div>)
     });
 
