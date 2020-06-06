@@ -114,16 +114,25 @@ class Addbook extends Component {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}&key=AIzaSyAOOYu0LFVQ45qOFjMl11H8Mdr2NYDxLqU`)
       .then(response => response.json())
       .then(data => {
+
+
         console.log(data)
         let bookDetails = data.items.map((data, key) => {
-          
-          console.log(data.volumeInfo.categories)
+          let authorsOutput = 'Unknow';
+          if (data.volumeInfo.authors) {
+            authorsOutput = checkString(data.volumeInfo.authors[0])
+          }
+          let publishedDateOuput = 0;
+          if (data.volumeInfo.publishedDate) {
+            publishedDateOuput = checkInteger(parseInt(data.volumeInfo.publishedDate))
+          }
+          // console.log(data.volumeInfo.categories)
           let outPutObject = {
             "title": checkString(data.volumeInfo.title),
-            "author": checkString(data.volumeInfo.authors[0]),
+            "author": authorsOutput,
             "genre": checkString(data.volumeInfo.categories),
             "isbn_id": checkString(data.volumeInfo.industryIdentifiers[0].identifier),
-            "year_published": checkInteger(parseInt(data.volumeInfo.publishedDate)),
+            "year_published": publishedDateOuput,
             "description": checkString(data.volumeInfo.description),
             "img": checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail),
           }
