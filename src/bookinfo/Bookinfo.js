@@ -3,17 +3,27 @@ import config from '../config';
 
 class Bookinfo extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      book: [],
+     };
+  }
+
   componentDidMount(){
     const bookId = this.props.match.params.bookId;
 
     let getCollectionByUserId = `${config.API_ENDPOINT}/books/book/${bookId}`;
 
-    console.log(getCollectionByUserId)
+    // console.log(getCollectionByUserId)
 
     fetch(getCollectionByUserId)
     .then(response => response.json())
     .then(data => { 
       console.log('success:', data)
+      this.setState({
+        book: data
+      })
     })
     .catch(err => {
             console.log(err)
@@ -64,7 +74,28 @@ class Bookinfo extends Component {
   }
 
   render() {
+    console.log(this.state)
 
+   let bookInfo =  this.state.book.map((book, key) => {
+      console.log(book.title);
+
+      return (
+        <main className="bookinfo" key={key}>
+        <div className="singleBookInfo">
+          <h2>{book.title}</h2>
+          <h3>{book.author}</h3>
+          <h4>Description:{(book.description).substring(0, 255)}...</h4>
+        </div>
+        <div>
+          <form action="#" method="post" className='comment' type="comment" onSubmit={this.submitComment}>
+            <input defaultValue={this.props.match.params.bookId} name="bookId" hidden></input>
+            <input className='commentbox' placeholder="Add comment.." type="comment" name="commentContent"></input>
+          <button type='submit' className="sbtcm">Submit</button>
+        </form>
+        </div> 
+      </main>
+      )
+    })
 
     return (
       <div className="App">
@@ -77,24 +108,10 @@ class Bookinfo extends Component {
               <li><a href="/">Log Out</a></li>
             </ul>
           </div>
-     </header>
-    <main className="bookinfo">
-        <div>
-          <h3>Title: The perks of being a wallflower</h3>
-          <h3>Author: T.R. Reid</h3>
-          <h4>Description: </h4>
-          <h2>Comments</h2>
-        </div>
-        <div>
-          <form action="#" method="post" className='comment' type="comment" onSubmit={this.submitComment}>
-            <input defaultValue={this.props.match.params.bookId} name="bookId" hidden></input>
-            <input className='commentbox' placeholder="Add comment.." type="comment" name="commentContent"></input>
-          <button type='submit' className="sbtcm"  >Submit</button>
-        </form>
-        </div> 
-    </main>
-    </section>
-    </div>
+      </header>
+      {bookInfo}
+      </section>
+      </div>
     )
   }
 }

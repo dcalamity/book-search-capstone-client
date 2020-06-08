@@ -128,9 +128,15 @@ form {
   padding: 1%;
 }
 .bookinfo {
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   flex-direction: column;
+}
+
+.singleBookInfo {
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
 }
 
 input[type="book"]{

@@ -68,7 +68,8 @@ class Booklist extends Component {
   //maybe instead of rending the list of books per collection id here, we create a component that fetches the books with whatever collectionId we pass into it and it fetched the books and structures them acordingly, then we just render the component here passing the information we need as props.
   
   render(){
-    console.log(this.state)
+    let book = this.state.books[0];
+    console.log(book)
 
     const existingBooks = 
     this.state.books.map((book, key) => {
