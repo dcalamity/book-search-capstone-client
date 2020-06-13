@@ -82,6 +82,7 @@ class Bookinfo extends Component {
       return (
         <main className="bookinfo" key={key}>
         <div className="singleBookInfo">
+        <img src={`${book.img}`} alt={book.title} />
           <h2>{book.title}</h2>
           <h3>{book.author}</h3>
           <h4>Description:{(book.description).substring(0, 255)}...</h4>

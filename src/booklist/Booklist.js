@@ -3,6 +3,7 @@ import TokenService from '../services/token-service.js';
 import Navbar from '../navbar/navbar'
 import { Link } from 'react-router-dom';
 import config from '../config';
+import Comments from '../comment/comments';
 
 class Booklist extends Component {
 
@@ -15,9 +16,9 @@ class Booklist extends Component {
   }
 
   componentDidMount(){
-
+    // console.log(this.state)
    const collectionId = this.props.match.params.collectionId;
-   console.log(collectionId)
+  //  console.log(collectionId)
 
     let getCollectionByUserId = `${config.API_ENDPOINT}/book_collections/user/${TokenService.getUserId()}`;
     console.log(getCollectionByUserId)
@@ -65,11 +66,11 @@ class Booklist extends Component {
     // window.location = window.location.href
   // }
 
-  //maybe instead of rending the list of books per collection id here, we create a component that fetches the books with whatever collectionId we pass into it and it fetched the books and structures them acordingly, then we just render the component here passing the information we need as props.
   
   render(){
+    console.log(this.state)
     let book = this.state.books[0];
-    console.log(book)
+    // console.log(book)
 
     const existingBooks = 
     this.state.books.map((book, key) => {
@@ -84,6 +85,7 @@ class Booklist extends Component {
         {/* <h3>{book.volumeInfo.title}</h3> */}
         <cite>{book.author}</cite>
         <address>{book.description}</address>
+        <Comments bookId={book.id} />
       </div>)
       })
 

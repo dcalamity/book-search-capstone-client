@@ -19,6 +19,7 @@ class Dashboard extends Component {
 
   componentDidMount(){
     let getCollectionByUserId = `${config.API_ENDPOINT}/book_collections/user/${TokenService.getUserId()}`;
+
     console.log(getCollectionByUserId)
 
     fetch(getCollectionByUserId)
@@ -41,7 +42,11 @@ class Dashboard extends Component {
   render () {
 
     console.log(this.state)
-    const listofcollections = 
+
+    let listofcollections = 'Unknown';
+
+    if(Object.keys(this.state.collectionsByUserId).length !== 0 ){
+       listofcollections = 
         this.state.collectionsByUserId.map((collection, key) => {
         const linkString = `/booklist/show/${collection.id}`
       
@@ -53,6 +58,8 @@ class Dashboard extends Component {
         <Link to={`/book/add/${collection.id}`}>Add a book</Link>
       </div>)
     });
+    }
+    
 
    return (
       <div className="App">

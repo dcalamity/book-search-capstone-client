@@ -210,10 +210,10 @@ class Addbook extends Component {
     //create an object to store the search filters
     const data = {}
   
-    //get all the from data from the form component
+    //get all the form data from the form component
     const formData = new FormData(e.target)
   
-    // console.log(formData)
+    console.log(formData)
     //for each of the keys in form data populate it with form value
     for (let value of formData) {
       data[value[0]] = value[1]
@@ -237,7 +237,8 @@ class Addbook extends Component {
       "year_published": checkInteger(parseInt(data.year_published)),
       "description": checkString(data.description),
       "bookmark_page": 0,
-      "book_rating": 0
+      "book_rating": 0,
+      "img": checkString(data.img)
     }
   
     console.log(payload)
@@ -294,6 +295,7 @@ class Addbook extends Component {
           <input type="hidden" defaultValue={book.year_published} name='year_published'></input>
           <input type="hidden" defaultValue={book.description} name='description'></input>
           <input type="hidden" defaultValue={this.props.match.params.collectionId} name='collection_id'></input>
+          <input type="hidden" defaultValue={book.img} name='img' ></input>
        </form> 
       </div>
       )
