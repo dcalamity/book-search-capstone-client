@@ -7,11 +7,13 @@ class Bookinfo extends Component {
     super(props);
     this.state = {
       book: [],
+      collectionId: 0
      };
   }
 
   componentDidMount(){
     const bookId = this.props.match.params.bookId;
+
 
     let getCollectionByUserId = `${config.API_ENDPOINT}/books/book/${bookId}`;
 
@@ -22,7 +24,8 @@ class Bookinfo extends Component {
     .then(data => { 
       console.log('success:', data)
       this.setState({
-        book: data
+        book: data,
+       collectionId: data[0].collection_id
       })
     })
     .catch(err => {
@@ -65,8 +68,9 @@ class Bookinfo extends Component {
     })
 
     .then(response => {
-      // console.log("response", response)
-      // window.location = `/book/add/${data.collection_id}` 
+      // console.log(response)
+      // console.log(this.state)
+      window.location = `/booklist/show/${data.collectionId}` 
     })
     .catch(err => {
       console.log(err);
@@ -90,6 +94,7 @@ class Bookinfo extends Component {
         <div>
           <form action="#" method="post" className='comment' type="comment" onSubmit={this.submitComment}>
             <input defaultValue={this.props.match.params.bookId} name="bookId" hidden></input>
+            <input defaultValue={this.state.collectionId} name="collectionId" hidden></input>
             <input className='commentbox' placeholder="Add comment.." type="comment" name="commentContent"></input>
           <button type='submit' className="sbtcm">Submit</button>
         </form>

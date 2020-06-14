@@ -31,7 +31,7 @@ class Addbook extends Component {
   
       .then(data => {
         // console.log('success:', data)
-        // console.log(data)
+        console.log(data)
 
         // let outPutObject = [];
 

@@ -37,22 +37,34 @@ class Comments extends Component  {
       .catch(error => {
         console.log(error)
       })
-
   }
-
-  render () {
-    let commentObject = {};
-    if(this.state.error == ''){
-      commentObject = this.state.comments;
+  commentsOutput =  (() => {
+     
+    if(this.state.error !== ''){
+      return(
+        <li>{this.state.error}</li>
+      ) 
     }
     else {
-      commentObject = this.state.error
+      let commentList = this.state.comments.map((comment,key) => {
+        console.log(comment)
+        return(
+        <li key={key}>{comment.book_comment}</li>
+        )
+      })
+      return commentList;
     }
-    console.log(commentObject)
+  })
+
+  render () {
+
+
+    
+    
     return (
       <div>
         <h1>Here are the comments.{this.props.bookId}</h1>
-        
+        <ul className="comment_list">{this.commentsOutput()}</ul> 
       </div>
     )
   }

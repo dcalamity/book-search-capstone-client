@@ -85,7 +85,7 @@ class Booklist extends Component {
         {/* <h3>{book.volumeInfo.title}</h3> */}
         <cite>{book.author}</cite>
         <address>{book.description}</address>
-        <Comments bookId={book.id} />
+        <Comments bookId={book.id} collectionId ={this.props.match.params.collectionId} />
       </div>)
       })
 
