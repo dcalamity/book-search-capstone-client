@@ -120,12 +120,12 @@ class Addbook extends Component {
 
         let bookDetails = data.items.map((data, key) => {
           
+
           let imgOutput = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.uh.edu%2Fpharmacy%2F_images%2Fdirectory-staff%2Fno-image-available.jpg&f=1&nofb=1';
-          // if(Object.keys(data.volumeInfo.imageLinks.smallThumbnail)){
-          //   imgOutput =  checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail)
-          // }
+
           if (data.volumeInfo.hasOwnProperty('imageLinks')){
-              imgOutput =  checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail)
+            console.log(data.volumeInfo.imageLinks.smallThumbnail)
+              imgOutput =  data.volumeInfo.imageLinks.smallThumbnail;
           }
 
           let authorsOutput = 'Unknow';
