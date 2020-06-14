@@ -31,7 +31,7 @@ class Addbook extends Component {
   
       .then(data => {
         // console.log('success:', data)
-        console.log(data)
+        // console.log(data)
 
         // let outPutObject = [];
 
@@ -117,7 +117,17 @@ class Addbook extends Component {
 
 
         console.log(data)
+
         let bookDetails = data.items.map((data, key) => {
+          
+          let imgOutput = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.uh.edu%2Fpharmacy%2F_images%2Fdirectory-staff%2Fno-image-available.jpg&f=1&nofb=1';
+          // if(Object.keys(data.volumeInfo.imageLinks.smallThumbnail)){
+          //   imgOutput =  checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail)
+          // }
+          if (data.volumeInfo.hasOwnProperty('imageLinks')){
+              imgOutput =  checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail)
+          }
+
           let authorsOutput = 'Unknow';
           if (data.volumeInfo.authors) {
             authorsOutput = checkString(data.volumeInfo.authors[0])
@@ -134,16 +144,16 @@ class Addbook extends Component {
             "isbn_id": checkString(data.volumeInfo.industryIdentifiers[0].identifier),
             "year_published": publishedDateOuput,
             "description": checkString(data.volumeInfo.description),
-            "img": checkEmptyImage(data.volumeInfo.imageLinks.smallThumbnail),
+            "img": imgOutput,
           }
-          console.log(outPutObject)
+          // console.log(outPutObject)
           return outPutObject 
         })
 
         this.setState({
           booksFound: bookDetails
         })
-        console.log(this.state)
+        // console.log(this.state)
       })
   
       .catch(err => {

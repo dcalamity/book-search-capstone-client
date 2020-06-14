@@ -18,14 +18,14 @@ class Booklist extends Component {
   componentDidMount(){
     // console.log(this.state)
    const collectionId = this.props.match.params.collectionId;
-  //  console.log(collectionId)
+  console.log('component Booklist is mounting')
 
     let getCollectionByUserId = `${config.API_ENDPOINT}/book_collections/user/${TokenService.getUserId()}`;
-    console.log(getCollectionByUserId)
+    // console.log(getCollectionByUserId)
 
     let booksInCollection = `${config.API_ENDPOINT}/books/collection/${collectionId}`;
 
-    console.log(booksInCollection)
+    // console.log(booksInCollection)
 
     fetch(getCollectionByUserId)
    
@@ -68,9 +68,8 @@ class Booklist extends Component {
 
   
   render(){
-    console.log(this.state)
-    let book = this.state.books[0];
-    // console.log(book)
+    // console.log(this.state)
+    // console.log(this.state.books[0])
 
     const existingBooks = 
     this.state.books.map((book, key) => {
@@ -81,10 +80,10 @@ class Booklist extends Component {
         <Link to={linkString} alt={book.title} className="bookInfo">
           <h3>{book.title}</h3>
         </Link>
-        {/* <img src={`${book.volumeInfo.imageLinks.smallThumbnail}`} alt={book.volumeInfo.title} /> */}
-        {/* <h3>{book.volumeInfo.title}</h3> */}
+        <img src={`${book.img}`} alt={book.title} />
+        <h3>{book.title}</h3>  
         <cite>{book.author}</cite>
-        <address>{book.description}</address>
+        <address>{book.description.substring(0, 255)}</address>
         <Comments bookId={book.id} collectionId ={this.props.match.params.collectionId} />
       </div>)
       })

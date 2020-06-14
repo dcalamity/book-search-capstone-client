@@ -14,7 +14,7 @@ class Comments extends Component  {
 
     componentDidMount (){
       let bookId = this.props.bookId;
-      console.log(bookId)
+      // console.log(bookId)
 
       let getCommentsByBookId = `${config.API_ENDPOINT}/comments/book/${bookId}`
 
@@ -38,6 +38,7 @@ class Comments extends Component  {
         console.log(error)
       })
   }
+
   commentsOutput =  (() => {
      
     if(this.state.error !== ''){
@@ -47,7 +48,7 @@ class Comments extends Component  {
     }
     else {
       let commentList = this.state.comments.map((comment,key) => {
-        console.log(comment)
+        // console.log(comment)
         return(
         <li key={key}>{comment.book_comment}</li>
         )
@@ -63,7 +64,7 @@ class Comments extends Component  {
     
     return (
       <div>
-        <h1>Here are the comments.{this.props.bookId}</h1>
+        <h1>Here are the comments.</h1>
         <ul className="comment_list">{this.commentsOutput()}</ul> 
       </div>
     )
