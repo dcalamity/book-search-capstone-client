@@ -46,8 +46,7 @@ class Dashboard extends Component {
     let listofcollections = 'Unknown';
 
     if(Object.keys(this.state.collectionsByUserId).length !== 0 ){
-       listofcollections = 
-        this.state.collectionsByUserId.map((collection, key) => {
+      listofcollections = this.state.collectionsByUserId.map((collection, key) => {
         const linkString = `/booklist/show/${collection.id}`
       
     return (
