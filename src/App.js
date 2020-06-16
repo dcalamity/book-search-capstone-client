@@ -31,19 +31,19 @@ class App extends Component {
       return (
         <div>
           <Route exact path='/' component={Signup}  />
-          {/* Stateful */}
+         
           <Route path='/user/login' component={LogIn}  />
           
           <Route path='/user/dash' component={Dashboard}  />
 
           <Route path='/booklist/show/:collectionId' component={Booklist}  />
-          {/* three down need to redo css */}
+        
           <Route path='/booklist/create' component={Createcollection}  />
-          {/* Stateful */}
+          
           <Route path='/book/show/:bookId' component={Bookinfo}  />
-          {/* Stateful */}
+         
           <Route path='/book/add/:collectionId' component={Addbook}  />
-          {/* Stateful */}
+          
           <Footer />
         </div>
       );

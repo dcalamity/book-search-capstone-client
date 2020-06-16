@@ -21,6 +21,7 @@ class Comments extends Component  {
       fetch(getCommentsByBookId)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         if(data.length == 0){
           this.setState({
           error: 'no comments'
@@ -40,7 +41,7 @@ class Comments extends Component  {
   }
 
   commentsOutput =  (() => {
-     
+    
     if(this.state.error !== ''){
       return(
         <li>{this.state.error}</li>
@@ -50,21 +51,33 @@ class Comments extends Component  {
       let commentList = this.state.comments.map((comment,key) => {
         // console.log(comment)
         return(
-        <li key={key}>{comment.book_comment}</li>
+        <div>
+          <li key={key}>{comment.book_comment}</li>
+          <button onClick={this.deleteComment} name="bookId" value={comment.id}>Delete</button>
+        </div>
+        
         )
       })
       return commentList;
     }
   })
 
-  render () {
 
+  deleteComment(event) {
+    alert('delete CLICKED!')
+   let bookId = event.target.value;
+    console.log(bookId)
+  }
+
+  render () {
+    console.log(this.state)
 
     
     
     return (
       <div>
         <h1>Here are the comments.</h1>
+        
         <ul className="comment_list">{this.commentsOutput()}</ul> 
       </div>
     )

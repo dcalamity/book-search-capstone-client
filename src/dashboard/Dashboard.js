@@ -44,6 +44,8 @@ class Dashboard extends Component {
     console.log(this.state)
 
     let listofcollections = 'Unknown';
+    
+    //still giving me issues when I sign up a new user
 
     if(Object.keys(this.state.collectionsByUserId).length !== 0 ){
       listofcollections = this.state.collectionsByUserId.map((collection, key) => {
