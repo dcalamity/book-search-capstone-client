@@ -7,14 +7,16 @@ class Comments extends Component  {
     super(props);
     this.state = {
       bookId: '',
+      collectionId: '',
       comments:[], 
       error: ''
     }
   }
 
     componentDidMount (){
-      let bookId = this.props.bookId;
-      // console.log(bookId)
+      let bookId = this.props.bookInfo.bookId;
+      let collectionId = this.props.bookInfo.collectionId;
+      console.log(this.props)
 
       let getCommentsByBookId = `${config.API_ENDPOINT}/comments/book/${bookId}`
 
@@ -29,7 +31,8 @@ class Comments extends Component  {
         }
         else(
           this.setState({
-            comments: data
+            comments: data,
+            collectionId: collectionId
           })
         )
         // console.log(data)
@@ -49,9 +52,9 @@ class Comments extends Component  {
     }
     else {
       let commentList = this.state.comments.map((comment,key) => {
-        // console.log(comment)
+        
         return(
-        <div>
+        <div key={key}>
           <li key={key}>{comment.book_comment}</li>
           <button onClick={this.deleteComment} name="bookId" value={comment.id}>Delete</button>
         </div>
@@ -64,13 +67,30 @@ class Comments extends Component  {
 
 
   deleteComment(event) {
-    alert('delete CLICKED!')
-   let bookId = event.target.value;
-    console.log(bookId)
+
+    let commentId = event.target.value;
+    const requestOptions = {
+      method: 'DELETE'
+    };
+
+    event.preventDefault();
+    
+    
+    fetch(`${config.API_ENDPOINT}/comments/comment/${commentId}`, requestOptions)
+
+    .then(response => {
+      console.log(response)
+      // window.location = `/booklist/show/${bookId}`
+    })
+
+    .catch(err => {
+      console.log(err);
+    })
+
   }
 
   render () {
-    console.log(this.state)
+    console.log(this.state.collectionId)
 
     
     

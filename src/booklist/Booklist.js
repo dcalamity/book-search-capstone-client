@@ -75,6 +75,12 @@ class Booklist extends Component {
     this.state.books.map((book, key) => {
     const linkString = `/book/show/${book.id}`
       // console.log(book)
+
+    let bookInfo = {
+      bookId: `${book.id}`,
+      collectionId: `${this.props.match.params.collectionId}`
+    }
+
     return (
       <div className="book" key={key}>
         <Link to={linkString} alt={book.title} className="bookInfo">
@@ -84,7 +90,7 @@ class Booklist extends Component {
         <h3>{book.title}</h3>  
         <cite>{book.author}</cite>
         <address>{book.description.substring(0, 255)}</address>
-        <Comments bookId={book.id} collectionId ={this.props.match.params.collectionId} />
+        <Comments bookInfo={bookInfo} collectionId ={this.props.match.params.collectionId} />
       </div>)
       })
 
