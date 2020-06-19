@@ -21,11 +21,8 @@ class Booklist extends Component {
   console.log('component Booklist is mounting')
 
     let getCollectionByUserId = `${config.API_ENDPOINT}/book_collections/user/${TokenService.getUserId()}`;
-    // console.log(getCollectionByUserId)
 
     let booksInCollection = `${config.API_ENDPOINT}/books/collection/${collectionId}`;
-
-    // console.log(booksInCollection)
 
     fetch(getCollectionByUserId)
    
