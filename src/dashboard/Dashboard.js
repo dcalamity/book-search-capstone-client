@@ -27,27 +27,60 @@ class Dashboard extends Component {
     .then(response => response.json())
     
     .then(data =>
-      this.setState({
+      {
+        console.log(data)
+        this.setState({
             collectionsByUserId: data
-          })
-        )
-      // .catch(error => this.setState({ error }))
-      console.log('Stateful component Dashboard successfully mounted.');
+        })
+      })
+      .catch(error => console.log(error))
+      // console.log('Stateful component Dashboard successfully mounted.');
   }
 
-  componentWillUnmount(){
+  deleteCollection(event) {
+    event.preventDefault()
+
+    const data = {}
+
+    const formData = new FormData(event.target)
+
+    for (let value of formData) {
+        data[value[0]] = value[1]
+    }
+
+    console.log(data)
+
+    let {collectionId} = data;
+    console.log(collectionId)
+    const requestOptions = {
+      method: 'DELETE'
+    };
+
+
+    
+    fetch(`${config.API_ENDPOINT}/book_collections/collection/${collectionId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      }
+
+    })
+
+    .then(response => {
+
+      window.location = `/user/dash`
+    })
 
   }
 
   render () {
 
-    console.log(this.state)
+    console.log(this.state.collectionsByUserId)
 
     let listofcollections = 'Unknown';
     
-    //still giving me issues when I sign up a new user
 
-    if(Object.keys(this.state.collectionsByUserId).length !== 0 ){
+    if(this.state.collectionsByUserId.length !== 0 ){
       listofcollections = this.state.collectionsByUserId.map((collection, key) => {
         const linkString = `/booklist/show/${collection.id}`
       
@@ -57,6 +90,10 @@ class Dashboard extends Component {
           <h3>{collection.collection_name}</h3>
         </Link>
         <Link to={`/book/add/${collection.id}`}>Add a book</Link>
+        <form onSubmit={this.deleteCollection}>
+          <input type="hidden" name='collectionId' defaultValue={collection.id}></input> 
+          <button type="submit">Delete Collection</button>
+        </form>
       </div>)
     });
     }

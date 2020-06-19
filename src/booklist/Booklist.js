@@ -50,22 +50,41 @@ class Booklist extends Component {
       console.log('Stateful component Dashboard successfully mounted.');
   }
 
-  //
+  deleteBook(event) {
+    event.preventDefault()
 
-  // navClick = () => {
-  //   console.log('Navigating to a different collection')
+    const data = {}
+
+    const formData = new FormData(event.target)
+
+    for (let value of formData) {
+        data[value[0]] = value[1]
+    }
+
+    console.log(data)
+
+    let {bookId, collectionId } = data;
+    console.log(bookId, collectionId)
+    const requestOptions = {
+      method: 'DELETE'
+    };
+
+
     
-  //   this.setState({
-  //     books: []
-  //   });
+    fetch(`${config.API_ENDPOINT}/books/book/${bookId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      }
 
-    // TokenService.getUserId = (id) => {
-    //   console.log(id)
-    // }
+    })
 
-    // window.location = window.location.href
-  // }
+    .then(response => {
 
+      window.location = `/booklist/show/${collectionId}`
+    })
+
+  }
   
   render(){
     // console.log(this.state)
@@ -83,6 +102,11 @@ class Booklist extends Component {
 
     return (
       <div className="book" key={key}>
+        <form onSubmit={this.deleteBook}>
+          <input type='hidden' name='bookId' defaultValue={book.id}></input>
+          <input type='hidden' name='collectionId' defaultValue={bookInfo.collectionId}></input>
+          <button type='submit'>Delete Book</button>
+        </form>
         <Link to={linkString} alt={book.title} className="bookInfo">
           <h3>{book.title}</h3>
         </Link>
@@ -91,6 +115,7 @@ class Booklist extends Component {
         <cite>{book.author}</cite>
         <address>{book.description.substring(0, 255)}</address>
         <Comments bookInfo={bookInfo} collectionId ={this.props.match.params.collectionId} />
+
       </div>)
       })
 

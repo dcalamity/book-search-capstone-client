@@ -7,7 +7,7 @@ class Comments extends Component  {
     super(props);
     this.state = {
       bookId: '',
-      collectionId: '',
+      collectionId: this.props.collectionId,
       comments:[], 
       error: ''
     }
@@ -43,7 +43,7 @@ class Comments extends Component  {
       })
   }
 
-  commentsOutput =  (() => {
+  commentsOutput =  ((collectionId) => {
     
     if(this.state.error !== ''){
       return(
@@ -51,12 +51,17 @@ class Comments extends Component  {
       ) 
     }
     else {
+      console.log(this.state.comments)
       let commentList = this.state.comments.map((comment,key) => {
         
         return(
         <div key={key}>
           <li key={key}>{comment.book_comment}</li>
-          <button onClick={this.deleteComment} name="bookId" value={comment.id}>Delete</button>
+          <form onSubmit={this.deleteComment}>
+            <input type='hidden' name='collectionId' defaultValue={collectionId}></input>
+            <input type='hidden' name='commentId' defaultValue={comment.id}></input>
+            <button type="submit">Delete</button>
+          </form>
         </div>
         
         )
@@ -67,24 +72,37 @@ class Comments extends Component  {
 
 
   deleteComment(event) {
+    event.preventDefault()
 
-    let commentId = event.target.value;
+    const data = {}
+
+    const formData = new FormData(event.target)
+
+    for (let value of formData) {
+        data[value[0]] = value[1]
+    }
+
+    console.log(data)
+
+    let {commentId, collectionId} = data;
+    console.log(collectionId, commentId)
     const requestOptions = {
       method: 'DELETE'
     };
 
-    event.preventDefault();
-    
-    
-    fetch(`${config.API_ENDPOINT}/comments/comment/${commentId}`, requestOptions)
 
-    .then(response => {
-      console.log(response)
-      // window.location = `/booklist/show/${bookId}`
+    
+    fetch(`${config.API_ENDPOINT}/comments/comment/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      }
+
     })
 
-    .catch(err => {
-      console.log(err);
+    .then(response => {
+
+      window.location = `/booklist/show/${collectionId}`
     })
 
   }
@@ -98,7 +116,7 @@ class Comments extends Component  {
       <div>
         <h1>Here are the comments.</h1>
         
-        <ul className="comment_list">{this.commentsOutput()}</ul> 
+        <ul className="comment_list">{this.commentsOutput(this.state.collectionId)}</ul> 
       </div>
     )
   }
