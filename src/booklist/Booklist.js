@@ -84,13 +84,10 @@ class Booklist extends Component {
   }
   
   render(){
-    // console.log(this.state)
-    // console.log(this.state.books[0])
 
     const existingBooks = 
     this.state.books.map((book, key) => {
     const linkString = `/book/show/${book.id}`
-      // console.log(book)
 
     let bookInfo = {
       bookId: `${book.id}`,
