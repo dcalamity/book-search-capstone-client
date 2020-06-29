@@ -74,19 +74,19 @@ class LogIn extends Component {
         </header>
         <section>
           <main className="login">
-            <form onSubmit={this.handleSubmit} className="input-lgn">
+            <form onSubmit={this.handleSubmit}>
             
               <h2>Log In</h2>
               <label>Username</label>
-              <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} />
+              <input type="text" id='userName' name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} required/>
               <label>Password</label>
-              <input type="Password" id='password' name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)}/>
+              <input type="Password" id='password' name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)} required/>
               <button className="s-button" type="submit">Sign In
               </button>
               <a href="/">Don't have an account yet? Create one here!</a>
             </form>
           </main>
-        </section>
+        </section >
       </div>
     );
   }

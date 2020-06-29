@@ -3,6 +3,7 @@ import ValidationError from '../validationError'
 import AuthApiService from '../services/auth-api-service';
 import TokenService from '../services/token-service.js';
 import config from '../config';
+import Footer from '../footer/Footer'
 
 class Signup extends Component {
 
@@ -22,13 +23,18 @@ class Signup extends Component {
             touched: false
         },
         LogInUserID: 0,
-        // submitButtonDisabled: 'disabled',
-        submitButtonDisabled: ''
+        isActive: true
     };
   }
 
   componentDidMount() {
       console.log('Stateful component Sign Up successfully mounted.');
+  }
+
+  handleShow = () => {
+    this.setState({
+      isActive : false
+    })
   }
 
   changeUsername(userName) {
@@ -117,34 +123,40 @@ handleLoginSuccess = user => {
           </nav>
         </header>  
         <main className="landing">
+          { this.state.isActive ? 
           <div className="info">
             <h2>Description</h2>
-            <p>Laborum consectetur laboris voluptate et mollit aliqua elit aute esse. Non laboris sit duis occaecat elit ex mollit ea ipsum incididunt. Duis duis laboris mollit commodo esse et ex ea dolore laborum. Adipisicing Lorem anim dolore amet est qui veniam et dolor occaecat tempor incididunt ex non. Amet sunt ex anim Lorem deserunt aute.</p>
+            <p>Laborum consectetur laboris voluptate et mollit aliqua elit aute esse. </p>
+            <button onClick={this.handleShow}>Sign up</button
+            ><a href="/user/login">Already have an account? Log in here!</a>
           </div>
-        <form className="sign-up" onSubmit={this.handleSubmit}>
-          <h2>Sign Up</h2>
-          <div className="">
-            <label htmlFor='username'>Username</label>
-            <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} required/>
-            {this.state.userName.touched && (<ValidationError message={this.validateUserName()} />)}
-          </div>
-          <div className="">
-            <label>Password</label>
-            <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)} required/>
-            {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
-          </div>
-          <div className="">
-            <label>Repeat Password</label>
-            <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)} required/>
-            {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
-          </div>
-          <button className="s-button" type="submit" disabled={this.state.submitButtonDisabled}>Sign Up</button>
-          <div>
-              <a href="/user/login">Already have an account? Log in here!</a>
+          :
+          <form className="sign-up" onSubmit={this.handleSubmit}>
+            <h2>Sign Up</h2>
+
+              <label htmlFor='username'>Username</label>
+              <input type="text" name='userName' placeholder="Username" onChange={e => this.changeUsername(e.target.value)} required/>
+              {this.state.userName.touched && (<ValidationError message={this.validateUserName()} />)}
+
+
+              <label>Password</label>
+              <input type="Password" name='password' placeholder="Password" onChange={e => this.changePassword(e.target.value)} required/>
+              {this.state.password.touched && (<ValidationError message={this.validatePassword()} />) }
+
+
+              <label>Repeat Password</label>
+              <input type="Password" name='repeatPassword' placeholder="Repeat Password" onChange={e => this.updateRepeatPassword(e.target.value)} required/>
+              {this.state.repeatPassword.touched && (<ValidationError message={this.validateRepeatPassword()} />)}
+
+            <button className="s-button" type="submit" disabled={this.state.submitButtonDisabled}>Sign Up</button>
+            <div>
+                <a href="/user/login">Already have an account? Log in here!</a>
             </div>
-        </form>
+          </form>
+         }
             
         </main> 
+        
       </div>
     );
   }

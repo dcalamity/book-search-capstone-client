@@ -133,7 +133,7 @@ class Createcollection extends Component {
           <form className="createcollection" onSubmit={this.handleSubmit}>
             <h2>Add a collection</h2>
             <label>Collection Name: </label>
-            <input type="text" className="collection" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)}/>
+            <input type="text" className="collection" name='Collection name' placeholder="2019 Books Read" onChange={e => this.addCollectionName(e.target.value)} required/>
             <button type="submit" className="s-button">Create List</button>
           </form>
         </div>

@@ -342,7 +342,7 @@ class Addbook extends Component {
               <div>
                 <form id="search" onSubmit={this.handleSearch}>
                   <label>Book Name</label>
-                  <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)}/>
+                  <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)} required/>
                   <button className="searchButton" type="submit">
                     search
                   </button>
