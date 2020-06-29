@@ -66,7 +66,7 @@ body {
   position: relative;
 }
 .App{
-  min-height: 100vh; /* will cover the 100% of viewport */
+  min-height: 96vh; /* will cover the 100% of viewport */
  overflow: hidden;
  display: block;
  position: relative;
@@ -157,7 +157,7 @@ header {
   background-color: #EEE;
   justify-content: space-between;
   width: 100%;
-  padding: 20px;
+  padding: 11px;
   border-bottom: 1px solid blue;
 }
 
@@ -360,6 +360,7 @@ footer {
   width: 100%;
   padding: 14px;
   border-top: 1px solid blue;
+  height: 40px
 }
 
 
