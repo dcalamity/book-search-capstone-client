@@ -86,13 +86,13 @@ class Dashboard extends Component {
       
     return (
       <div className="list" key={key}>
-        <Link to={linkString} >
+        <Link to={linkString}>
           <h3>{collection.collection_name}</h3>
         </Link>
         <Link to={`/book/add/${collection.id}`}>Add a book</Link>
-        <form onSubmit={this.deleteCollection}>
+        <form onSubmit={this.deleteCollection} class="deleteForm">
           <input type="hidden" name='collectionId' defaultValue={collection.id}></input> 
-          <button type="submit">Delete Collection</button>
+          <button type="submit" class="deleteButton">Delete Collection</button>
         </form>
       </div>)
     });

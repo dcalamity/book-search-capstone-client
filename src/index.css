@@ -104,8 +104,7 @@ form {
   width: 40%;
   max-width: 300px;
   margin: 2%;
- 
-  margin-top: 20%;
+  margin-top: 10%;
   margin-left: 65%;
   border: 1px solid black;
   padding: 20px;
@@ -189,6 +188,13 @@ main {
 
 /* forms  */
 
+.deleteForm {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+
 #bookSearch{
   background-color: lightgray;
   width: 100%;
@@ -250,6 +256,12 @@ input[type='comment'] {
   /* pointer-events: none; */
 }
 
+.deleteButton {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
 .searchButton {
   width: auto;
   height: 42px;
@@ -302,7 +314,7 @@ input.collection {
   width: 285px;
   margin: 2%;
   margin-left: 65%;
-  margin-top: 20%;
+  margin-top: 10%;
   border: 1px solid black;
   padding: 3%;
   opacity: 0.8;
@@ -311,7 +323,8 @@ input.collection {
 
 /* container for list of the different collecitons */
 
-.c-list, .book-list {
+ .c-list {
+  height: 100%;
   background-color: lightgrey;
   width: 25%;
   text-align: center;
@@ -321,16 +334,27 @@ input.collection {
   justify-content: space-between;
 }
 
-.c-list {
-  height: 100%;
-}
 /* actual content list */
+
+ .book-list {
+  background-color: lightgrey;
+  width: 25%;
+  text-align: center;
+  padding: 2%;
+  margin-top: 10%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 
 .list {
   display: flex;
   text-align: center;
   padding: inherit;
-  justify-content: space-evenly;
+  margin: 0px;
+  padding: 0px;
+  border: none;
 }
 
 .book-list {
