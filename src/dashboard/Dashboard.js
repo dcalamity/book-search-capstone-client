@@ -90,9 +90,9 @@ class Dashboard extends Component {
           <h3>{collection.collection_name}</h3>
         </Link>
         <Link to={`/book/add/${collection.id}`}>Add a book</Link>
-        <form onSubmit={this.deleteCollection} class="deleteForm">
+        <form onSubmit={this.deleteCollection} className="deleteForm">
           <input type="hidden" name='collectionId' defaultValue={collection.id}></input> 
-          <button type="submit" class="deleteButton">Delete Collection</button>
+          <button type="submit" className="deleteButton">Delete Collection</button>
         </form>
       </div>)
     });

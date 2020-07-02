@@ -132,16 +132,21 @@ class Addbook extends Component {
           if (data.volumeInfo.authors) {
             authorsOutput = checkString(data.volumeInfo.authors[0])
           }
+          
           let publishedDateOuput = 0;
           if (data.volumeInfo.publishedDate) {
             publishedDateOuput = checkInteger(parseInt(data.volumeInfo.publishedDate))
+          }
+          let industryIdentifiersOutput = 'Unknow';
+          if (data.volumeInfo.industryIdentifiers) {
+            industryIdentifiersOutput = checkString(data.volumeInfo.industryIdentifiers[0].identifier)
           }
           // console.log(data.volumeInfo.categories)
           let outPutObject = {
             "title": checkString(data.volumeInfo.title),
             "author": authorsOutput,
             "genre": checkString(data.volumeInfo.categories),
-            "isbn_id": checkString(data.volumeInfo.industryIdentifiers[0].identifier),
+            "isbn_id": industryIdentifiersOutput,
             "year_published": publishedDateOuput,
             "description": checkString(data.volumeInfo.description),
             "img": imgOutput,
@@ -291,7 +296,7 @@ class Addbook extends Component {
     this.state.booksFound.map((book, key) => {
     
     return (
-      <div key={key} class="apiResultsItem" >
+      <div key={key} className="apiResultsItem" >
          <form onSubmit={this.addBookFromApi} id="bookSearch">
           <img src={`${book.img}`} alt={book.title} />
           <h3>{book.title}</h3>
