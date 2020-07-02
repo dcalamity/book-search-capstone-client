@@ -291,7 +291,7 @@ class Addbook extends Component {
     this.state.booksFound.map((book, key) => {
     
     return (
-      <div key={key} >
+      <div key={key} class="apiResultsItem" >
          <form onSubmit={this.addBookFromApi} id="bookSearch">
           <img src={`${book.img}`} alt={book.title} />
           <h3>{book.title}</h3>
@@ -339,16 +339,17 @@ class Addbook extends Component {
             </div>
 
             <div className="book-list">
-              <div>
-                <form id="search" onSubmit={this.handleSearch}>
-                  <label>Book Name</label>
-                  <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)} required/>
-                  <button className="searchButton" type="submit">
-                    search
-                  </button>
-                </form>
+              <form id="search" onSubmit={this.handleSearch}>
+                <label>Book Name</label>
+                <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)} required/>
+                <button className="searchButton" type="submit">
+                  search
+                </button>
+              </form>
+              <div id="apiResults">
+               {apiResults} 
               </div>
-              {apiResults}
+              
             </div>
           </main> 
       </div>
