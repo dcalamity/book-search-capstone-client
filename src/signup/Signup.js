@@ -70,6 +70,7 @@ handleLoginSuccess = user => {
             userName.value = ''
             password.value = ''
             repeatPassword.value = ''
+            
             this.handleLoginSuccess()
         })
         .catch(res => {

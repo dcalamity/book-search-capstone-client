@@ -44,9 +44,9 @@ class Createcollection extends Component {
    handleSubmit = (event) => {
     event.preventDefault();
     let User_Id = TokenService.getUserId();
-    // console.log(User_Id)
+    console.log(User_Id)
     
-    // console.log(this.state.collectionName)
+    console.log(this.state.collectionName)
 
     const collectionName = this.state.collectionName.value;
 

@@ -79,7 +79,7 @@ class Dashboard extends Component {
 
     console.log(this.state.collectionsByUserId)
 
-    let listofcollections = 'Unknown';
+    let listofcollections = <div hidden>'No collections'</div>;
     
 
     if(this.state.collectionsByUserId.length !== 0 ){
