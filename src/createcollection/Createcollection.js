@@ -26,6 +26,9 @@ class Createcollection extends Component {
     .then(response => response.json())
 
     .then(data => { 
+      if ('error' in data){
+        return console.log(data)
+      } 
       console.log('success:', data)
       this.setState({collectionsByUserId: data})
     })
@@ -37,28 +40,6 @@ class Createcollection extends Component {
       console.log('Stateful component Create Collection successfully mounted.');
   }
 
-
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //     console.log(this.state)
-  //     fetch(``)
-  //       .then(response => {
-  //         if (response.ok) {
-  //             return response.json();
-  //         }
-  //         throw new Error(response.statusText);
-  //       })
-  //       .then(data => {
-  //         console.log(data)
-  //         //here we will have user sign up processing
-  //         this.setState({
-  //           LogInUserID: 55
-  //         });
-  //       })
-  //      .catch(err => {
-  //         console.log(err);
-  //       });   
-  //  }
 
    handleSubmit = (event) => {
     event.preventDefault();

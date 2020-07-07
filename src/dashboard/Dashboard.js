@@ -27,8 +27,10 @@ class Dashboard extends Component {
     .then(response => response.json())
     
     .then(data =>
-      {
-        console.log(data)
+      { 
+        if ('error' in data){
+          return console.log(data)
+        } 
         this.setState({
             collectionsByUserId: data
         })
