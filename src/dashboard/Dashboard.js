@@ -7,6 +7,7 @@ import config from '../config';
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/navbar'
 
+//how to disable accessing this webpage
 
 class Dashboard extends Component {
 
