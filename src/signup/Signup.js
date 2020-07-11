@@ -53,29 +53,33 @@ class Signup extends Component {
     this.setState({ repeatPassword: { value: repeatPassword, touched: true } });
 }
 
-handleLoginSuccess = user => {
-  window.location = '/user/dash'
-}
+  handleLoginSuccess = user => {
+    window.location = '/user/dash'
+  }
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    const { userName, password, repeatPassword } = event.target
+    event.preventDefault();
+    const { userName, password, repeatPassword } = event.target;
+    // console.log('username:', userName.value, 'password:', password.value);
     this.setState({ error: null })
     AuthApiService.postUser({
         user_name: userName.value,
         password: password.value,
     })
-        .then(user => {
-          console.log(user)
-            userName.value = ''
-            password.value = ''
-            repeatPassword.value = ''
-            
-            this.handleLoginSuccess()
-        })
-        .catch(res => {
-            this.setState({ error: res.error })
-        })  
+
+    .then(response => {
+        console.log('user:', response)
+        userName.value = ''
+        password.value = ''
+        repeatPassword.value = ''
+        TokenService.saveAuthToken(response.authToken)
+        TokenService.saveUserId(response.id)
+        window.location = '/user/dash'
+    }) 
+
+    .catch(res => {
+        this.setState({ error: res.error })
+    })  
    }
 
     validateUserName() {

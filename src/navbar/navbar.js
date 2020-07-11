@@ -9,10 +9,10 @@ class navbar extends Component  {
     console.log('Logging out')
     TokenService.clearAuthToken()
     TokenService.getUserId = (id) => {
-      console.log(id)
+      // console.log(id)
     }
 
-    // window.location='/'
+    window.location='/'
   }
 
   render(){

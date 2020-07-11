@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import ValidationError from '../validationError';
+import ValidationError from '../validationError';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
-// import config from '../config';
+import config from '../config';
 
 class LogIn extends Component {
   constructor(props) {
@@ -50,7 +50,6 @@ class LogIn extends Component {
       password.value = ''
       TokenService.saveAuthToken(response.authToken)
       TokenService.saveUserId(response.userId)
-      // fetch(`${config.API_ENDPOINT}/met/interval`)
       window.location ='/user/dash'
     })
     .then(response => {
