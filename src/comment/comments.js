@@ -114,8 +114,6 @@ class Comments extends Component  {
     
     return (
       <div>
-        <h1>Here are the comments.</h1>
-        
         <ul className="comment_list">{this.commentsOutput(this.state.collectionId)}</ul> 
       </div>
     )

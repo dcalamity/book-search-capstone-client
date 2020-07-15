@@ -24,7 +24,7 @@ class navbar extends Component  {
         <nav className="top-right">
           <ul className='link'>
             <li>
-              <Link to="/user/dash">Home {TokenService.getUserId()}</Link>
+              <Link to="/user/dash">Home</Link>
             </li>
             <li>
               <Link to="/" onClick={this.logOutClick}>Log Out</Link>

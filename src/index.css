@@ -90,11 +90,16 @@ h1 {
 }
 
 h2 {
-  font-size:  25px;
+  font-size: 25px;
+  width: 51%;
+  margin-bottom: 20px;
+  margin-left: 24%;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 h4 {
@@ -102,7 +107,7 @@ h4 {
 }
 
 form {
-  background-color: lightgray;
+  background-color: floralwhite;
   width: 40%;
   max-width: 300px;
   margin: 2%;
@@ -110,7 +115,6 @@ form {
   margin-left: 65%;
   border: 1px solid black;
   padding: 20px;
-  opacity: 0.8;
 }
 
 label {
@@ -120,33 +124,46 @@ label {
 }
 
 input {
-  display: block;
+  /* display: block; */
   padding: 5px 10px;
   margin: 3px 0px;
   width: 100%;
   border-radius: 10px;
+  border: 1px solid black;
+  background: lightgray;
 }
 
 button {
   margin: 15px 0px;
-  background-color: rgba(7, 81, 150, 0.4);
+  background-color: rgb(54, 54, 54);
   color: white;
   padding: 10px 12px;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
-  border: 1px solid blue;
+  border: 1px solid #747070;
   border-radius: 10px;
   width: 100%;
 }
 
 button:hover {
-  background-color: blue;
+  background-color: lightgrey;
   cursor: pointer;
+  color: black;
 }
 
+.s-button {
+  color: white;
+}
 
+.top {
+  display: flex;
+  justify-content: space-around;
+}
 
+.addmain {
+  display: block;
+}
 
 /* -------------------------------------
 Header styles (Main Module)
@@ -155,11 +172,11 @@ Header styles (Main Module)
 
 header {
   display: flex;
-  background-color: white;
+  background-color: floralwhite;
   justify-content: space-between;
   width: 100%;
   padding: 11px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid lightgrey;
 }
 
 
@@ -191,35 +208,36 @@ main {
 /* forms  */
 
 .deleteForm {
-  margin: 0px;
-  padding: 0px;
-  border: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    height: 17px;
+    width: 85px;
 }
 
 
 #bookSearch{
-  background-color: lightgray;
+  background-color: lightgrey;
   width: 96%;
-  /* height: 100%; */
   margin: 2%;
-  /* margin-right: 10%; */
-  /* margin-top: 10%; */
-  border: 1px solid black;
-  padding: 1%;
+  padding: 7%;
 }
 
 #bookSearch img {
-  width: 100%;
-  max-width: 300px;
+  width: 75%;
+  /* max-width: 300px;
   margin-bottom: 20px;
   margin-top: 20px;
-  display: block;
+  display: block; */
 }
 
 .bookinfo {
-  /* justify-content: space-around; */
+  /* justify-content: space-around;  */
   align-items: center;
   flex-direction: column;
+  background-color: white;
+  margin: 10%;
+  border-radius: 5px;
 }
 
 .singleBookInfo {
@@ -241,6 +259,13 @@ input[type="book"]{
   padding: 0%;
   margin: 0%;
 }
+
+.commentContainer {
+  background-color: azure;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+
 
 input[type='comment'] {
   width: 100%;
@@ -264,34 +289,51 @@ input[type='comment'] {
   /* height: 50%; */
   border: none;
   /* pointer-events: none; */
+  max-width: 100%;
 }
 
 #apiResults {
-  margin: 2%;
-  width: 96%;
-  background-color: #f8f4f4;
-  text-align: center;
-  padding: 2%;
-  /* height: 656px; */
+  margin: 18px 12px;
+  width: 45%;
+  max-width: 50%;
+  background-color: white;
+  /* right: 29px; */
+  float: right;
+  height: 100%;
   border-radius: 5px;
-  /* margin-top: 10%; */
+
   overflow-x: scroll;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+}
+
+#apiResults::-webkit-scrollbar {
+  display: none;
 }
 
 .apiResultsItem {
-  width: 300px;
+  width: 200px;
   display: inline-block;
   /* margin-left: 10px; */
-  border-left: 1px solid red;
+  /* border-left: 1px solid red; */
   vertical-align: top;
+  padding: 10px;
 }
 
 .deleteButton {
   border: 0px;
   padding: 0px;
   margin: 0px;
+}
+
+
+.bookDeleteBtn {
+  width: 100px;
+  margin-left: 18px;
+  margin-top: 28px;
+}
+
+.bookDeleteBtn:hover {
+  background-color: red;
 }
 
 .searchButton {
@@ -309,20 +351,20 @@ input[type='comment'] {
 
 .create_collection {
   width: 25%;
-  text-align: center;
   margin-top: 10%;
   display: flex;
 }
 
 .createcollection {
   width: 100%;
-  height: 200px;
+  height: 100%;
   margin: 0%;
+  background-color: floralwhite;
 }
 
 
 input.collection {
-  width: 65%;
+  /* width: 65%; */
 }
 /* log in form  */
 
@@ -342,26 +384,24 @@ input.collection {
 }
 
 .info{
-  background-color: lightgray;
+  background-color: floralwhite;
   width: 285px;
   margin: 2%;
-  margin-left: 65%;
-  margin-top: 10%;
-  border: 1px solid black;
+  margin-left: 62%;
+  margin-top: 11%;
   padding: 3%;
-  opacity: 0.8;
   border-radius: 5px;
 }
 
 /* container for list of the different collecitons */
 
  .c-list {
-  /* height: 100%; */
-  background-color: lightgrey;
-  /* width: 50%; */
+  background-color: floralwhite;
   text-align: center;
   padding: 2%;
   margin-top: 10%;
+  border-radius: 2px;
+  height: 100%
 }
 
 /* actual content list */
@@ -376,39 +416,87 @@ input.collection {
   margin: 0px;
   padding: 7px;
   border-bottom: 1px solid;
+  justify-content: space-between;
 }
 
+
 .book-list {
+  height: 100%;
   display: block;
-  padding: 0px ;
-  background-color: lightgrey;
-  width: 50%;
+  padding: 0px;
+  background-color: floralwhite;
+  width: 25%;
   text-align: center;
   padding: 2%;
   margin-top: 10%;
   flex-direction: column;
   justify-content: space-between;
+  overflow-x: scroll;
+  border-radius: 2px;
+}
+
+.bookListName {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  width: 170px;
 }
 
 .book {
   margin: 0px 20px 20px 20px;
   border: 2px solid black;
-  background-color: lightcyan;
-  height: 100%;
+  background-color: lavender;
+  height: 313px;
   font-size: 20px;
+  /* overflow: hidden; */
+  
 }
 
+.bookForm {
+  margin: 0px;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+
+.leftContainer {
+  float: left;
+  width: 48%;
+  padding: 5%;
+}
+
+.rightContainer {
+  float: right;
+  width: 39%;
+  height: 100%;
+  overflow: hidden;
+  margin-right: 16px;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+.comment_list {
+  list-style: none;
+}
+
+.summaryContainer {
+  height: 159px;
+  margin-top: 23px;
+  overflow: scroll;
+  font-size: 13px;
+}
 /* -------------------------------------
 Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
 footer {
-  background-color: white;
+  background-color: floralwhite;
   text-align: center;
   width: 100%;
   padding: 14px;
-  border-top: 1px solid black;
+  border-top: 1px solid lightgrey;
   height: 40px
 }
 

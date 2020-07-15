@@ -96,22 +96,31 @@ class Booklist extends Component {
 
     return (
       <div className="book" key={key}>
-        <form onSubmit={this.deleteBook}>
-          <input type='hidden' name='bookId' defaultValue={book.id}></input>
-          <input type='hidden' name='collectionId' defaultValue={bookInfo.collectionId}></input>
-          <button type='submit'>Delete Book</button>
-        </form>
-        <Link to={linkString} alt={book.title} className="bookInfo">
+        <div className='leftContainer'>
+          <Link to={linkString} alt={book.title} className="bookInfo">
           <h3>{book.title}</h3>
-        </Link>
-        <img src={`${book.img}`} alt={book.title} />
-        <h3>{book.title}</h3>  
-        <cite>{book.author}</cite>
-        <address>{book.description.substring(0, 255)}</address>
-        <Comments bookInfo={bookInfo} collectionId ={this.props.match.params.collectionId} />
-
-      </div>)
-      })
+          </Link>
+          <img src={`${book.img}`} alt={book.title} />
+          <cite>{book.author}</cite>
+        </div>
+        <div className='rightContainer'>
+          <div className='summaryContainer'>
+            <p>{book.description.substring(0, 100)} ...</p>
+          </div>
+          <div>
+            <form className="bookForm"onSubmit={this.deleteBook}>
+            <input type='hidden' name='bookId' defaultValue={book.id}></input>
+            <input type='hidden' name='collectionId' defaultValue={bookInfo.collectionId}></input>
+            <button type='submit' className='bookDeleteBtn'>Delete Book</button>
+          </form> 
+          </div>
+          
+        </div>
+        {/* <div className='commentContainer'>
+            <Comments bookInfo={bookInfo} collectionId ={this.props.match.params.collectionId} />
+        </div> */}
+      </div>
+      )})
 
     const listofcollections = 
     this.state.collectionsByUserId.map((collection, key) => {
@@ -119,7 +128,7 @@ class Booklist extends Component {
   
     return (
       <div className="list" key={key}>
-        <a href={linkString}>
+        <a href={linkString} className='bookListName'>
           <h3>{collection.collection_name}</h3>
         </a>
         <Link to={`/book/add/${collection.id}`}>Add a book</Link>
@@ -135,12 +144,13 @@ class Booklist extends Component {
         <Navbar />
       <main className="d-main">
       <div className="c-list">
-            <h2>Collections</h2>{this.props.match.params.collectionId} 
+            <h2>Collections</h2>
             {listofcollections}
             
             <Link to="/booklist/create">Create a collection</Link>
           </div>
         <div className="book-list">
+          <h2>Books</h2>
           {existingBooks}
         </div>
       </main>

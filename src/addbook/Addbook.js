@@ -323,8 +323,7 @@ class Addbook extends Component {
             <nav className="top-right">
               <ul className='link'>
                 <li>
-                  <a href="/user/dash">Home {TokenService.getUserId()} 
-                  </a>
+                  <a href="/user/dash">Home</a>
                 </li>
                 <li>
                   <a href="/">Log Out</a>
@@ -332,30 +331,29 @@ class Addbook extends Component {
               </ul>
             </nav>
           </header>
-          <main className="d-main">
-            <div className="c-list">
-              <h2>Books</h2>
-              {existingBooks}
-              
-              
-              <button className="s-button">
-                <a href="/booklist/create">Add a collection</a>
-              </button>
+          <main className='addmain'>
+            <div className='top'>
+              <div className="c-list">
+                <h2>Books</h2>
+                {existingBooks}
+                <button>
+                  <a href="/booklist/create" class="s-button">Add a collection</a>
+                </button>
+              </div>
+              <div className="book-list">
+                <form id="search" onSubmit={this.handleSearch}>
+                  <label><h2>Book Name</h2></label>
+                  <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)} required/>
+                  <button className="searchButton" type="submit">
+                    search
+                  </button>
+                </form>              
+              </div>
+            </div> 
+            <div id="apiResults">
+               {apiResults} 
             </div>
 
-            <div className="book-list">
-              <form id="search" onSubmit={this.handleSearch}>
-                <label>Book Name</label>
-                <input className="book_search" type="book" name='seach' placeholder="Book Title" onChange={e => this.changeSearch(e.target.value)} required/>
-                <button className="searchButton" type="submit">
-                  search
-                </button>
-              </form>
-              <div id="apiResults">
-               {apiResults} 
-              </div>
-              
-            </div>
           </main> 
       </div>
       );

@@ -74,7 +74,7 @@ class Signup extends Component {
         repeatPassword.value = ''
         TokenService.saveAuthToken(response.authToken)
         TokenService.saveUserId(response.id)
-        window.location = '/user/dash'
+        window.location = '/user/login'
     }) 
 
     .catch(res => {
@@ -130,8 +130,8 @@ class Signup extends Component {
         <main className="landing">
           { this.state.isActive ? 
           <div className="info">
-            <h2>Description</h2>
-            <p>Laborum consectetur laboris voluptate et mollit aliqua elit aute esse. </p>
+            <h2>Book Library</h2>
+            <p>Search for books you own or have read and create your digital library.</p>
             <button onClick={this.handleShow}>Sign up</button
             ><a href="/user/login">Already have an account? Log in here!</a>
           </div>
