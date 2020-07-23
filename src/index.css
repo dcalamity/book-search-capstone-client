@@ -65,13 +65,7 @@ body {
   font-size: 12px;
   position: relative;
 }
-.App{
-  min-height: 96vh; /* will cover the 100% of viewport */
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 100px; /* height of your footer */
-}
+
 
 a {
   font-size: 20px;
@@ -199,6 +193,13 @@ main {
   min-height: 100%;
 }
 
+.App{
+  min-height: 96vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
 /* Dashboard main content  */
 
 .d-main {
@@ -231,14 +232,36 @@ main {
   display: block; */
 }
 
-.bookinfo {
-  /* justify-content: space-around;  */
-  align-items: center;
-  flex-direction: column;
-  background-color: white;
-  margin: 10%;
-  border-radius: 5px;
+#bookList{
+  width: 88%;
 }
+
+#bookShow img {
+  width: 50%;
+}
+
+.bookinfo {
+ width: 50%;
+  background-color: red;
+}
+
+.bookTitle {
+  /* width: 40px; 
+  height: 65px; */
+  /* width: 107px; */
+  /* text-align: center; */
+  /* margin-bottom: 0%; */
+  /* margin: 1%; */
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.bookTitle:hover {
+  /* overflow: visible; */
+}
+
+
 
 .singleBookInfo {
   align-items: center;
@@ -346,7 +369,7 @@ input[type='comment'] {
 }
 
 .searchButton:hover {
-  cursor: pointer; 
+  cursor: pointer;  
 }
 
 .create_collection {
@@ -401,7 +424,9 @@ input.collection {
   padding: 2%;
   margin-top: 10%;
   border-radius: 2px;
-  height: 100%
+  height: 100%;
+  width: 500px;
+  padding: 56px;
 }
 
 /* actual content list */
@@ -425,7 +450,7 @@ input.collection {
   display: block;
   padding: 0px;
   background-color: floralwhite;
-  width: 25%;
+  width: 32%;
   text-align: center;
   padding: 2%;
   margin-top: 10%;
@@ -447,10 +472,10 @@ input.collection {
   margin: 0px 20px 20px 20px;
   border: 2px solid black;
   background-color: lavender;
-  height: 313px;
+  height: 400px;
   font-size: 20px;
   /* overflow: hidden; */
-  
+  width: 90%;
 }
 
 .bookForm {
@@ -462,8 +487,8 @@ input.collection {
 
 .leftContainer {
   float: left;
-  width: 48%;
-  padding: 5%;
+  width: 52%;
+
 }
 
 .rightContainer {
@@ -483,7 +508,7 @@ input.collection {
 .summaryContainer {
   height: 159px;
   margin-top: 23px;
-  overflow: scroll;
+  /* overflow: scroll; */
   font-size: 13px;
 }
 /* -------------------------------------

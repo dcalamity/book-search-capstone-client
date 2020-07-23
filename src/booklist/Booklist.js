@@ -97,10 +97,13 @@ class Booklist extends Component {
     return (
       <div className="book" key={key}>
         <div className='leftContainer'>
-          <Link to={linkString} alt={book.title} className="bookInfo">
-          <h3>{book.title}</h3>
+          <Link to={linkString} alt={book.title} >
+            <div className="bookTitle">
+               <h3>{book.title}</h3>
+            </div>
+         
           </Link>
-          <img src={`${book.img}`} alt={book.title} />
+          <img id="bookList" src={`${book.img}`} alt={book.title} />
           <cite>{book.author}</cite>
         </div>
         <div className='rightContainer'>
