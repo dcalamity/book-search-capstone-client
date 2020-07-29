@@ -51,7 +51,7 @@ Dashboard | Dashboard Booklist
 Create collection | Book Info
 ![Create Collection](github-images/wireframes/create-collection.jpg) | ![Book Info](github-images/wireframes/book-info.jpg)
 Add book
-![Add Book](github-images/wireframes/add-books-to-collection.jpg)
+![Add Book](github-images/wireframes/add-book.jpg)
 
 
 ## Business Objects (database structure)
