@@ -45,13 +45,13 @@ This app has two types of users: Visitors and logged-in users
 ## Wireframes
 Landing/Sign Up | Member Log In
 :-------------------------:|:-------------------------:
-![Landing/Sign Up](github-images/wireframes/Landing-Sign-Up.jpg)  |  ![Member Log In](github-images/wireframes/Member-Login.jpg)
+![Landing/Sign Up](github-images/wireframes/Landing-Sign-Up.jpg)  |  ![Member Log In](github-images/wireframes/member-login.jpg)
 Dashboard | Dashboard Booklist
-![Dashboard](github-images/wireframes/Dashboard.jpg) | ![Dashboard/Booklist](github-images/wireframes/Dashboard-Booklist.jpg)
+![Dashboard](github-images/wireframes/dashboard.jpg) | ![Dashboard/Booklist](github-images/wireframes/dashboard-booklist.jpg)
 Create collection | Book Info
-![Create Collection](github-images/wireframes/Create-Collection.jpg) | ![Book Info](github-images/wireframes/Book-Info.jpg)
+![Create Collection](github-images/wireframes/create-collection.jpg) | ![Book Info](github-images/wireframes/book-info.jpg)
 Add book
-![Add Book](github-images/wireframes/Add-books-to-collection.jpg)
+![Add Book](github-images/wireframes/add-books-to-collection.jpg)
 
 
 ## Business Objects (database structure)
