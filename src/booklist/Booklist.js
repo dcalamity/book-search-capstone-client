@@ -109,19 +109,18 @@ class Booklist extends Component {
         <div className='rightContainer'>
           <div className='summaryContainer'>
             <p>{book.description.substring(0, 100)} ...</p>
-          </div>
-          <div>
-            <form className="bookForm"onSubmit={this.deleteBook}>
+          </div>          
+        </div>
+        
+          <form className="bookForm"onSubmit={this.deleteBook}>
             <input type='hidden' name='bookId' defaultValue={book.id}></input>
             <input type='hidden' name='collectionId' defaultValue={bookInfo.collectionId}></input>
             <button type='submit' className='bookDeleteBtn'>Delete Book</button>
           </form> 
-          </div>
-          
-        </div>
-        {/* <div className='commentContainer'>
+        
+        <div className='commentContainer'>
             <Comments bookInfo={bookInfo} collectionId ={this.props.match.params.collectionId} />
-        </div> */}
+        </div>
       </div>
       )})
 

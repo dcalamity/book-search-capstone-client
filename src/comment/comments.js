@@ -55,7 +55,7 @@ class Comments extends Component  {
       let commentList = this.state.comments.map((comment,key) => {
         
         return(
-        <div key={key}>
+        <div key={key} className="dltbtm">
           <li key={key}>{comment.book_comment}</li>
           <form onSubmit={this.deleteComment}>
             <input type='hidden' name='collectionId' defaultValue={collectionId}></input>

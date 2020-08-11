@@ -86,12 +86,17 @@ class Bookinfo extends Component {
       return (
         <main className="bookinfo" key={key}>
         <div className="singleBookInfo">
-        <img src={`${book.img}`} alt={book.title} />
-          <h2>{book.title}</h2>
-          <h3>{book.author}</h3>
-          <h4>Description:{(book.description).substring(0, 255)}...</h4>
+          <div className="leftInfo">
+            <img src={`${book.img}`} alt={book.title} /> 
+          </div>
+          <div className="rightInfo">
+            <h2>{book.title}</h2>
+            <h3>{book.author}</h3>
+            <h4>Description:{(book.description).substring(0, 255)}...</h4>
+          </div>
+          
         </div>
-        <div>
+        <div className='btmInfo'>
           <form action="#" method="post" className='comment' type="comment" onSubmit={this.submitComment}>
             <input defaultValue={this.props.match.params.bookId} name="bookId" hidden></input>
             <input defaultValue={this.state.collectionId} name="collectionId" hidden></input>

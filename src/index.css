@@ -107,8 +107,9 @@ form {
   margin: 2%;
   margin-top: 10%;
   margin-left: 65%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 20px;
+  border-radius: 4px;
 }
 
 label {
@@ -241,8 +242,12 @@ main {
 }
 
 .bookinfo {
- width: 50%;
-  background-color: red;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 68%;
+  margin-top: 7%;
 }
 
 .bookTitle {
@@ -259,12 +264,25 @@ main {
   /* overflow: visible; */
 }
 
+.leftInfo {
+  float: left;
+}
 
+.rightInfo {
+  width: 50%;
+  float: right;
+  margin-right: 100px;
+}
+
+.btmInfo {
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+}
 
 .singleBookInfo {
-  align-items: center;
-  justify-content: center;
   padding: 5%;
+  margin: 0 auto;
 }
 
 input[type="book"]{
@@ -278,13 +296,15 @@ input[type="book"]{
 .comment {
   width: 100%;
   padding: 0%;
-  margin: 0%;
+  margin: 0 auto;
 }
 
 .commentContainer {
-  background-color: azure;
   border-radius: 2px;
   margin-right: 20px;
+  width: 84%;
+  margin: auto;
+  margin-bottom: 16px;
 }
 
 
@@ -296,6 +316,8 @@ input[type='comment'] {
   border: 1px solid blVack;
   border-radius: 4px;
 }
+
+
 
 .input-error{
   color: red;
@@ -338,6 +360,14 @@ input[type='comment'] {
   /* border-left: 1px solid red; */
   vertical-align: top;
   padding: 10px;
+}
+
+.dltbtm {
+  border: 1px solid black;
+  background-color: white;
+  margin-bottom: 17px;
+  padding: 15px;
+  font-size: 15px;
 }
 
 .deleteButton {
@@ -470,7 +500,7 @@ input.collection {
   margin: 0px 20px 20px 20px;
   border: 2px solid black;
   background-color: lavender;
-  height: 400px;
+  /* height: 400px; */
   font-size: 20px;
   /* overflow: hidden; */
   width: 90%;
