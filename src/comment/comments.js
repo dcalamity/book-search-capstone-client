@@ -24,7 +24,7 @@ class Comments extends Component  {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        if(data.length == 0){
+        if(data.length === 0){
           this.setState({
           error: 'no comments'
          })
